@@ -104,6 +104,7 @@
             this.materialLabel33 = new MaterialSkin.Controls.MaterialLabel();
             this.materialListBox4 = new MaterialSkin.Controls.MaterialListBox();
             this.materialLabel34 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel26 = new MaterialSkin.Controls.MaterialLabel();
             materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
@@ -245,6 +246,7 @@
             // 
             // administrador
             // 
+            this.administrador.Controls.Add(this.materialLabel26);
             this.administrador.Controls.Add(this.materialButton1);
             this.administrador.Controls.Add(this.materialLabel11);
             this.administrador.Controls.Add(this.materialLabel10);
@@ -1655,6 +1657,22 @@
             this.materialLabel34.Text = "listado de presupuestos";
             this.materialLabel34.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // materialLabel26
+            // 
+            this.materialLabel26.AutoSize = true;
+            this.materialLabel26.BackColor = System.Drawing.Color.White;
+            this.materialLabel26.Cursor = System.Windows.Forms.Cursors.Default;
+            this.materialLabel26.Depth = 0;
+            this.materialLabel26.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.materialLabel26.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel26.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.materialLabel26.Location = new System.Drawing.Point(179, 324);
+            this.materialLabel26.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel26.Name = "materialLabel26";
+            this.materialLabel26.Size = new System.Drawing.Size(501, 19);
+            this.materialLabel26.TabIndex = 14;
+            this.materialLabel26.Text = "⚠ reliza un click en cualquier parte de la pantalla para cargar los datos";
+            // 
             // repaAr
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1757,6 +1775,7 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel18;
         private System.Windows.Forms.ComboBox comboBox2;
         private MaterialSkin.Controls.MaterialTextBox2 materialTextBox24;
+        private MaterialSkin.Controls.MaterialLabel materialLabel26;
     }
 }
 

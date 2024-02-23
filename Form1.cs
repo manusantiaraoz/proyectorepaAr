@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using System.Windows.Forms.Design;
 
 namespace repa.AR
@@ -31,7 +32,6 @@ namespace repa.AR
         {
             abrirConexion();
             String query = "SELECT * FROM "+ table;
-            Console.WriteLine(query);
             SqlCommand comando = new SqlCommand(query, conect);
             SqlDataReader respuesta = comando.ExecuteReader();
            
@@ -54,6 +54,25 @@ namespace repa.AR
             conect.Close();
         } 
 
+        private void guardarCmbiosAdmin()
+        {
+            String nombre = adminNombre.Text;
+            String apellido = adminApellido.Text;
+            long cuil = long.Parse (adminCuil.Text);
+            String direccion = adminDireccion.Text;
+            String empresa = adminEmpresa.Text;
+            long telefono = long.Parse(adminTelefono.Text);
+
+            abrirConexion();
+
+            String query = "UPDATE admin SET nombre = '"+nombre+"' ,apellido= '" +apellido+ "' ,cuil= "+ cuil + " ,direccion= '"+direccion+"' ,empresa = '"+empresa+"' ,telefono = " + telefono + " WHERE id_admin = 1";
+            SqlCommand comando = new SqlCommand (query, conect);
+            comando.ExecuteReader();
+            mostrarDatosAdmin();
+            MessageBox.Show("se modifico administrador con exito");
+            conect.Close(); 
+        }
+
         private void inicio_Click(object sender, EventArgs e)
         {
 
@@ -61,7 +80,7 @@ namespace repa.AR
 
         private void materialButton1_Click(object sender, EventArgs e)
         {
-            mostrarDatos("FABRICANTE");
+            guardarCmbiosAdmin();
         }
 
         private void administrador_Click(object sender, EventArgs e)
