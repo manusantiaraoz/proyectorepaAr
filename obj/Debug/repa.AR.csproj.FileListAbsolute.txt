@@ -1,0 +1,12 @@
+C:\Users\ROG BY NG\source\repos\repa.AR\bin\Debug\repa.AR.exe.config
+C:\Users\ROG BY NG\source\repos\repa.AR\bin\Debug\repa.AR.exe
+C:\Users\ROG BY NG\source\repos\repa.AR\bin\Debug\repa.AR.pdb
+C:\Users\ROG BY NG\source\repos\repa.AR\bin\Debug\MaterialSkin.dll
+C:\Users\ROG BY NG\source\repos\repa.AR\obj\Debug\repa.AR.csproj.AssemblyReference.cache
+C:\Users\ROG BY NG\source\repos\repa.AR\obj\Debug\repa.AR.Properties.Resources.resources
+C:\Users\ROG BY NG\source\repos\repa.AR\obj\Debug\repa.AR.csproj.GenerateResource.cache
+C:\Users\ROG BY NG\source\repos\repa.AR\obj\Debug\repa.AR.csproj.CoreCompileInputs.cache
+C:\Users\ROG BY NG\source\repos\repa.AR\obj\Debug\repa.AR.csproj.CopyComplete
+C:\Users\ROG BY NG\source\repos\repa.AR\obj\Debug\repa.AR.exe
+C:\Users\ROG BY NG\source\repos\repa.AR\obj\Debug\repa.AR.pdb
+C:\Users\ROG BY NG\source\repos\repa.AR\obj\Debug\repa.AR.repaAr.resources
