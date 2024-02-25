@@ -52,20 +52,27 @@
             this.adminApellido = new MaterialSkin.Controls.MaterialTextBox2();
             this.adminNombre = new MaterialSkin.Controls.MaterialTextBox2();
             this.repuestos = new System.Windows.Forms.TabPage();
+            this.materialLabel12 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel14 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialListRepuesto = new MaterialSkin.Controls.MaterialListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.descripcionRepuesto = new MaterialSkin.Controls.MaterialTextBox2();
             this.btnCambiosRep = new MaterialSkin.Controls.MaterialButton();
             this.btnBorrarRep = new MaterialSkin.Controls.MaterialButton();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.btnAgregarRep = new MaterialSkin.Controls.MaterialButton();
             this.materialLabel13 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel14 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel15 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel17 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel19 = new MaterialSkin.Controls.MaterialLabel();
             this.precioRepuesto = new MaterialSkin.Controls.MaterialTextBox2();
             this.precioVRepuesta = new MaterialSkin.Controls.MaterialTextBox2();
             this.nombreRepuesto = new MaterialSkin.Controls.MaterialTextBox2();
-            this.materialListBox1 = new MaterialSkin.Controls.MaterialListBox();
-            this.materialLabel12 = new MaterialSkin.Controls.MaterialLabel();
             this.clientes = new System.Windows.Forms.TabPage();
             this.materialLabel16 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel20 = new MaterialSkin.Controls.MaterialLabel();
@@ -105,7 +112,6 @@
             this.materialLabel33 = new MaterialSkin.Controls.MaterialLabel();
             this.materialListBox4 = new MaterialSkin.Controls.MaterialListBox();
             this.materialLabel34 = new MaterialSkin.Controls.MaterialLabel();
-            this.descripcionRepuesto = new MaterialSkin.Controls.MaterialTextBox2();
             materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
@@ -612,21 +618,21 @@
             // 
             // repuestos
             // 
+            this.repuestos.Controls.Add(this.materialLabel12);
+            this.repuestos.Controls.Add(this.materialLabel14);
+            this.repuestos.Controls.Add(this.materialListRepuesto);
             this.repuestos.Controls.Add(this.descripcionRepuesto);
             this.repuestos.Controls.Add(this.btnCambiosRep);
             this.repuestos.Controls.Add(this.btnBorrarRep);
             this.repuestos.Controls.Add(this.comboBox1);
             this.repuestos.Controls.Add(this.btnAgregarRep);
             this.repuestos.Controls.Add(this.materialLabel13);
-            this.repuestos.Controls.Add(this.materialLabel14);
             this.repuestos.Controls.Add(this.materialLabel15);
             this.repuestos.Controls.Add(this.materialLabel17);
             this.repuestos.Controls.Add(this.materialLabel19);
             this.repuestos.Controls.Add(this.precioRepuesto);
             this.repuestos.Controls.Add(this.precioVRepuesta);
             this.repuestos.Controls.Add(this.nombreRepuesto);
-            this.repuestos.Controls.Add(this.materialListBox1);
-            this.repuestos.Controls.Add(this.materialLabel12);
             this.repuestos.Location = new System.Drawing.Point(4, 4);
             this.repuestos.Name = "repuestos";
             this.repuestos.Padding = new System.Windows.Forms.Padding(3);
@@ -634,6 +640,128 @@
             this.repuestos.TabIndex = 2;
             this.repuestos.Text = "repuestos";
             this.repuestos.UseVisualStyleBackColor = true;
+            this.repuestos.Click += new System.EventHandler(this.repuestos_Click);
+            // 
+            // materialLabel12
+            // 
+            this.materialLabel12.BackColor = System.Drawing.Color.Azure;
+            this.materialLabel12.Depth = 0;
+            this.materialLabel12.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.materialLabel12.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel12.ForeColor = System.Drawing.Color.Black;
+            this.materialLabel12.Location = new System.Drawing.Point(348, 219);
+            this.materialLabel12.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel12.Name = "materialLabel12";
+            this.materialLabel12.Size = new System.Drawing.Size(143, 19);
+            this.materialLabel12.TabIndex = 34;
+            this.materialLabel12.Text = "descripcion";
+            this.materialLabel12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // materialLabel14
+            // 
+            this.materialLabel14.BackColor = System.Drawing.Color.Azure;
+            this.materialLabel14.Depth = 0;
+            this.materialLabel14.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.materialLabel14.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel14.ForeColor = System.Drawing.Color.Black;
+            this.materialLabel14.Location = new System.Drawing.Point(226, 146);
+            this.materialLabel14.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel14.Name = "materialLabel14";
+            this.materialLabel14.Size = new System.Drawing.Size(143, 19);
+            this.materialLabel14.TabIndex = 33;
+            this.materialLabel14.Text = "precio compra";
+            this.materialLabel14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // materialListRepuesto
+            // 
+            this.materialListRepuesto.AutoSizeTable = false;
+            this.materialListRepuesto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialListRepuesto.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.materialListRepuesto.CausesValidation = false;
+            this.materialListRepuesto.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4,
+            this.columnHeader5,
+            this.columnHeader6});
+            this.materialListRepuesto.Depth = 0;
+            this.materialListRepuesto.FullRowSelect = true;
+            this.materialListRepuesto.HideSelection = false;
+            this.materialListRepuesto.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.materialListRepuesto.Location = new System.Drawing.Point(11, 6);
+            this.materialListRepuesto.MinimumSize = new System.Drawing.Size(200, 100);
+            this.materialListRepuesto.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.materialListRepuesto.MouseState = MaterialSkin.MouseState.OUT;
+            this.materialListRepuesto.MultiSelect = false;
+            this.materialListRepuesto.Name = "materialListRepuesto";
+            this.materialListRepuesto.OwnerDraw = true;
+            this.materialListRepuesto.Size = new System.Drawing.Size(769, 108);
+            this.materialListRepuesto.TabIndex = 32;
+            this.materialListRepuesto.UseCompatibleStateImageBehavior = false;
+            this.materialListRepuesto.View = System.Windows.Forms.View.Details;
+            this.materialListRepuesto.SelectedIndexChanged += new System.EventHandler(this.materialListRepuesto_SelectedIndexChanged);
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "nombre";
+            this.columnHeader1.Width = 128;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "$ compra";
+            this.columnHeader2.Width = 115;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "$ venta";
+            this.columnHeader3.Width = 105;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "descripcion";
+            this.columnHeader4.Width = 232;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "fabricante";
+            this.columnHeader5.Width = 107;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "id";
+            this.columnHeader6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // descripcionRepuesto
+            // 
+            this.descripcionRepuesto.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.descripcionRepuesto.AnimateReadOnly = false;
+            this.descripcionRepuesto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.descripcionRepuesto.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.descripcionRepuesto.Depth = 0;
+            this.descripcionRepuesto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.descripcionRepuesto.HideSelection = true;
+            this.descripcionRepuesto.LeadingIcon = null;
+            this.descripcionRepuesto.Location = new System.Drawing.Point(18, 241);
+            this.descripcionRepuesto.MaxLength = 200;
+            this.descripcionRepuesto.MouseState = MaterialSkin.MouseState.OUT;
+            this.descripcionRepuesto.Name = "descripcionRepuesto";
+            this.descripcionRepuesto.PasswordChar = '\0';
+            this.descripcionRepuesto.PrefixSuffixText = null;
+            this.descripcionRepuesto.ReadOnly = false;
+            this.descripcionRepuesto.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.descripcionRepuesto.SelectedText = "";
+            this.descripcionRepuesto.SelectionLength = 0;
+            this.descripcionRepuesto.SelectionStart = 0;
+            this.descripcionRepuesto.ShortcutsEnabled = true;
+            this.descripcionRepuesto.Size = new System.Drawing.Size(741, 48);
+            this.descripcionRepuesto.TabIndex = 31;
+            this.descripcionRepuesto.TabStop = false;
+            this.descripcionRepuesto.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.descripcionRepuesto.TrailingIcon = null;
+            this.descripcionRepuesto.UseSystemPasswordChar = false;
             // 
             // btnCambiosRep
             // 
@@ -643,7 +771,7 @@
             this.btnCambiosRep.Depth = 0;
             this.btnCambiosRep.HighEmphasis = true;
             this.btnCambiosRep.Icon = null;
-            this.btnCambiosRep.Location = new System.Drawing.Point(553, 290);
+            this.btnCambiosRep.Location = new System.Drawing.Point(470, 312);
             this.btnCambiosRep.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnCambiosRep.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnCambiosRep.Name = "btnCambiosRep";
@@ -662,7 +790,7 @@
             this.btnBorrarRep.Depth = 0;
             this.btnBorrarRep.HighEmphasis = true;
             this.btnBorrarRep.Icon = null;
-            this.btnBorrarRep.Location = new System.Drawing.Point(454, 290);
+            this.btnBorrarRep.Location = new System.Drawing.Point(371, 312);
             this.btnBorrarRep.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnBorrarRep.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnBorrarRep.Name = "btnBorrarRep";
@@ -673,14 +801,15 @@
             this.btnBorrarRep.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btnBorrarRep.UseAccentColor = false;
             this.btnBorrarRep.UseVisualStyleBackColor = true;
+            this.btnBorrarRep.Click += new System.EventHandler(this.btnBorrarRep_Click);
             // 
             // comboBox1
             // 
             this.comboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(429, 144);
+            this.comboBox1.Location = new System.Drawing.Point(574, 173);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(215, 21);
+            this.comboBox1.Size = new System.Drawing.Size(185, 21);
             this.comboBox1.TabIndex = 28;
             // 
             // btnAgregarRep
@@ -690,7 +819,7 @@
             this.btnAgregarRep.Depth = 0;
             this.btnAgregarRep.HighEmphasis = true;
             this.btnAgregarRep.Icon = null;
-            this.btnAgregarRep.Location = new System.Drawing.Point(343, 290);
+            this.btnAgregarRep.Location = new System.Drawing.Point(260, 312);
             this.btnAgregarRep.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnAgregarRep.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnAgregarRep.Name = "btnAgregarRep";
@@ -709,28 +838,13 @@
             this.materialLabel13.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.materialLabel13.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.materialLabel13.ForeColor = System.Drawing.Color.Black;
-            this.materialLabel13.Location = new System.Drawing.Point(256, 45);
+            this.materialLabel13.Location = new System.Drawing.Point(31, 148);
             this.materialLabel13.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel13.Name = "materialLabel13";
-            this.materialLabel13.Size = new System.Drawing.Size(221, 19);
+            this.materialLabel13.Size = new System.Drawing.Size(172, 19);
             this.materialLabel13.TabIndex = 26;
             this.materialLabel13.Text = "nombre";
             this.materialLabel13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // materialLabel14
-            // 
-            this.materialLabel14.BackColor = System.Drawing.Color.Azure;
-            this.materialLabel14.Depth = 0;
-            this.materialLabel14.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.materialLabel14.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel14.ForeColor = System.Drawing.Color.Black;
-            this.materialLabel14.Location = new System.Drawing.Point(483, 45);
-            this.materialLabel14.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel14.Name = "materialLabel14";
-            this.materialLabel14.Size = new System.Drawing.Size(123, 19);
-            this.materialLabel14.TabIndex = 25;
-            this.materialLabel14.Text = "precio compra";
-            this.materialLabel14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // materialLabel15
             // 
@@ -739,10 +853,10 @@
             this.materialLabel15.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.materialLabel15.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.materialLabel15.ForeColor = System.Drawing.Color.Black;
-            this.materialLabel15.Location = new System.Drawing.Point(630, 44);
+            this.materialLabel15.Location = new System.Drawing.Point(396, 146);
             this.materialLabel15.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel15.Name = "materialLabel15";
-            this.materialLabel15.Size = new System.Drawing.Size(123, 19);
+            this.materialLabel15.Size = new System.Drawing.Size(143, 19);
             this.materialLabel15.TabIndex = 24;
             this.materialLabel15.Text = "precio venta";
             this.materialLabel15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -754,10 +868,10 @@
             this.materialLabel17.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.materialLabel17.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.materialLabel17.ForeColor = System.Drawing.Color.Black;
-            this.materialLabel17.Location = new System.Drawing.Point(426, 120);
+            this.materialLabel17.Location = new System.Drawing.Point(574, 149);
             this.materialLabel17.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel17.Name = "materialLabel17";
-            this.materialLabel17.Size = new System.Drawing.Size(220, 21);
+            this.materialLabel17.Size = new System.Drawing.Size(185, 21);
             this.materialLabel17.TabIndex = 22;
             this.materialLabel17.Text = "fabricante";
             this.materialLabel17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -770,7 +884,7 @@
             this.materialLabel19.Font = new System.Drawing.Font("Roboto Medium", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.materialLabel19.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
             this.materialLabel19.ForeColor = System.Drawing.Color.Black;
-            this.materialLabel19.Location = new System.Drawing.Point(371, 16);
+            this.materialLabel19.Location = new System.Drawing.Point(305, 117);
             this.materialLabel19.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel19.Name = "materialLabel19";
             this.materialLabel19.Size = new System.Drawing.Size(292, 32);
@@ -789,7 +903,7 @@
             this.precioRepuesto.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.precioRepuesto.HideSelection = true;
             this.precioRepuesto.LeadingIcon = null;
-            this.precioRepuesto.Location = new System.Drawing.Point(483, 65);
+            this.precioRepuesto.Location = new System.Drawing.Point(226, 168);
             this.precioRepuesto.Margin = new System.Windows.Forms.Padding(0);
             this.precioRepuesto.MaxLength = 32767;
             this.precioRepuesto.MouseState = MaterialSkin.MouseState.OUT;
@@ -802,7 +916,7 @@
             this.precioRepuesto.SelectionLength = 0;
             this.precioRepuesto.SelectionStart = 0;
             this.precioRepuesto.ShortcutsEnabled = false;
-            this.precioRepuesto.Size = new System.Drawing.Size(123, 36);
+            this.precioRepuesto.Size = new System.Drawing.Size(143, 36);
             this.precioRepuesto.TabIndex = 18;
             this.precioRepuesto.TabStop = false;
             this.precioRepuesto.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -818,10 +932,10 @@
             this.precioVRepuesta.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.precioVRepuesta.Cursor = System.Windows.Forms.Cursors.Default;
             this.precioVRepuesta.Depth = 0;
-            this.precioVRepuesta.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.precioVRepuesta.Font = new System.Drawing.Font("Microsoft YaHei", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.precioVRepuesta.HideSelection = true;
             this.precioVRepuesta.LeadingIcon = null;
-            this.precioVRepuesta.Location = new System.Drawing.Point(630, 65);
+            this.precioVRepuesta.Location = new System.Drawing.Point(396, 167);
             this.precioVRepuesta.Margin = new System.Windows.Forms.Padding(0);
             this.precioVRepuesta.MaxLength = 32767;
             this.precioVRepuesta.MouseState = MaterialSkin.MouseState.OUT;
@@ -834,7 +948,7 @@
             this.precioVRepuesta.SelectionLength = 0;
             this.precioVRepuesta.SelectionStart = 0;
             this.precioVRepuesta.ShortcutsEnabled = false;
-            this.precioVRepuesta.Size = new System.Drawing.Size(123, 36);
+            this.precioVRepuesta.Size = new System.Drawing.Size(143, 36);
             this.precioVRepuesta.TabIndex = 20;
             this.precioVRepuesta.TabStop = false;
             this.precioVRepuesta.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -854,7 +968,7 @@
             this.nombreRepuesto.Font = new System.Drawing.Font("MS PGothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nombreRepuesto.HideSelection = true;
             this.nombreRepuesto.LeadingIcon = null;
-            this.nombreRepuesto.Location = new System.Drawing.Point(259, 65);
+            this.nombreRepuesto.Location = new System.Drawing.Point(34, 167);
             this.nombreRepuesto.Margin = new System.Windows.Forms.Padding(0);
             this.nombreRepuesto.MaxLength = 32767;
             this.nombreRepuesto.MouseState = MaterialSkin.MouseState.OUT;
@@ -867,7 +981,7 @@
             this.nombreRepuesto.SelectionLength = 0;
             this.nombreRepuesto.SelectionStart = 0;
             this.nombreRepuesto.ShortcutsEnabled = false;
-            this.nombreRepuesto.Size = new System.Drawing.Size(215, 36);
+            this.nombreRepuesto.Size = new System.Drawing.Size(169, 36);
             this.nombreRepuesto.TabIndex = 17;
             this.nombreRepuesto.TabStop = false;
             this.nombreRepuesto.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -875,36 +989,6 @@
             this.nombreRepuesto.UseAccent = false;
             this.nombreRepuesto.UseSystemPasswordChar = false;
             this.nombreRepuesto.UseTallSize = false;
-            // 
-            // materialListBox1
-            // 
-            this.materialListBox1.BackColor = System.Drawing.Color.White;
-            this.materialListBox1.BorderColor = System.Drawing.Color.LightGray;
-            this.materialListBox1.Depth = 0;
-            this.materialListBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialListBox1.Location = new System.Drawing.Point(10, 52);
-            this.materialListBox1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialListBox1.Name = "materialListBox1";
-            this.materialListBox1.SelectedIndex = -1;
-            this.materialListBox1.SelectedItem = null;
-            this.materialListBox1.Size = new System.Drawing.Size(221, 274);
-            this.materialListBox1.TabIndex = 8;
-            // 
-            // materialLabel12
-            // 
-            this.materialLabel12.BackColor = System.Drawing.Color.Azure;
-            this.materialLabel12.Depth = 0;
-            this.materialLabel12.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.materialLabel12.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel12.FontType = MaterialSkin.MaterialSkinManager.fontType.Subtitle1;
-            this.materialLabel12.ForeColor = System.Drawing.Color.Black;
-            this.materialLabel12.Location = new System.Drawing.Point(6, 17);
-            this.materialLabel12.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel12.Name = "materialLabel12";
-            this.materialLabel12.Size = new System.Drawing.Size(225, 32);
-            this.materialLabel12.TabIndex = 7;
-            this.materialLabel12.Text = "listado ";
-            this.materialLabel12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // clientes
             // 
@@ -1676,37 +1760,6 @@
             this.materialLabel34.Text = "listado de presupuestos";
             this.materialLabel34.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // descripcionRepuesto
-            // 
-            this.descripcionRepuesto.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.descripcionRepuesto.AnimateReadOnly = false;
-            this.descripcionRepuesto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.descripcionRepuesto.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.descripcionRepuesto.Depth = 0;
-            this.descripcionRepuesto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.descripcionRepuesto.HideSelection = true;
-            this.descripcionRepuesto.LeadingIcon = null;
-            this.descripcionRepuesto.Location = new System.Drawing.Point(259, 200);
-            this.descripcionRepuesto.MaxLength = 200;
-            this.descripcionRepuesto.MouseState = MaterialSkin.MouseState.OUT;
-            this.descripcionRepuesto.Name = "descripcionRepuesto";
-            this.descripcionRepuesto.PasswordChar = '\0';
-            this.descripcionRepuesto.PrefixSuffixText = null;
-            this.descripcionRepuesto.ReadOnly = false;
-            this.descripcionRepuesto.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.descripcionRepuesto.SelectedText = "";
-            this.descripcionRepuesto.SelectionLength = 0;
-            this.descripcionRepuesto.SelectionStart = 0;
-            this.descripcionRepuesto.ShortcutsEnabled = true;
-            this.descripcionRepuesto.Size = new System.Drawing.Size(494, 48);
-            this.descripcionRepuesto.TabIndex = 31;
-            this.descripcionRepuesto.TabStop = false;
-            this.descripcionRepuesto.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.descripcionRepuesto.TrailingIcon = null;
-            this.descripcionRepuesto.UseSystemPasswordChar = false;
-            // 
             // repaAr
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1759,17 +1812,14 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel7;
         private MaterialSkin.Controls.MaterialLabel materialLabel6;
         private MaterialSkin.Controls.MaterialButton materialButton1;
-        private MaterialSkin.Controls.MaterialLabel materialLabel12;
         private MaterialSkin.Controls.MaterialButton btnAgregarRep;
         private MaterialSkin.Controls.MaterialLabel materialLabel13;
-        private MaterialSkin.Controls.MaterialLabel materialLabel14;
         private MaterialSkin.Controls.MaterialLabel materialLabel15;
         private MaterialSkin.Controls.MaterialLabel materialLabel17;
         private MaterialSkin.Controls.MaterialLabel materialLabel19;
         private MaterialSkin.Controls.MaterialTextBox2 precioRepuesto;
         private MaterialSkin.Controls.MaterialTextBox2 precioVRepuesta;
         private MaterialSkin.Controls.MaterialTextBox2 nombreRepuesto;
-        private MaterialSkin.Controls.MaterialListBox materialListBox1;
         private System.Windows.Forms.ComboBox comboBox1;
         private MaterialSkin.Controls.MaterialButton btnCambiosRep;
         private MaterialSkin.Controls.MaterialButton btnBorrarRep;
@@ -1811,6 +1861,15 @@
         private MaterialSkin.Controls.MaterialTextBox2 materialTextBox24;
         private MaterialSkin.Controls.MaterialLabel materialLabel26;
         private MaterialSkin.Controls.MaterialTextBox2 descripcionRepuesto;
+        private MaterialSkin.Controls.MaterialListView materialListRepuesto;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
+        private MaterialSkin.Controls.MaterialLabel materialLabel12;
+        private MaterialSkin.Controls.MaterialLabel materialLabel14;
+        private System.Windows.Forms.ColumnHeader columnHeader6;
     }
 }
 
