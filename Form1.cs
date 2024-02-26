@@ -42,7 +42,7 @@ namespace repa.AR
         private void mostrarRepuestos()
         {
             abrirConexion();
-            String query = "SELECT r.id_repuesto, r.nombre, r.precio_venta, r.precio_compra, r.detalle, f.nombre_fabricante FROM repuesto AS r INNER JOIN fabricante AS f on r.fabricante = f.id_fabricante ";
+            String query = "SELECT r.id_repuesto, r.nombre, r.precio_venta, r.precio_compra, r.detalle, f.nombre_fabricante, f.id_fabricante FROM repuesto AS r INNER JOIN fabricante AS f on r.fabricante = f.id_fabricante ";
             SqlCommand comando = new SqlCommand(query, conect);
             SqlDataReader respuesta = comando.ExecuteReader();
 
@@ -53,7 +53,7 @@ namespace repa.AR
                 rep.SubItems.Add(respuesta["precio_compra"].ToString());
                 rep.SubItems.Add(respuesta["precio_venta"].ToString());
                 rep.SubItems.Add(respuesta["detalle"].ToString());
-                rep.SubItems.Add(respuesta["nombre_fabricante"].ToString());
+                rep.SubItems.Add(respuesta["id_fabricante"].ToString() + "-" + respuesta["nombre_fabricante"].ToString());
                 rep.SubItems.Add(respuesta["id_repuesto"].ToString());
 
                 materialListRepuesto.Items.Add(rep);
@@ -95,6 +95,15 @@ namespace repa.AR
             conect.Close();
         }
 
+        private void limpiarCamposRepuesto()
+        {
+            nombreRepuesto.Clear();
+            precioRepuesto.Clear();
+            precioVRepuesta.Clear(); 
+            descripcionRepuesto.Clear(); 
+            comboBox1.Items.Clear(); 
+        }
+
         private void inicio_Click(object sender, EventArgs e)
         {
 
@@ -112,7 +121,7 @@ namespace repa.AR
 
         private void repuestos_Click(object sender, EventArgs e)
         {
-            mostrarRepuestos();
+         
         }
 
         private void materialListRepuesto_SelectedIndexChanged(object sender, EventArgs e)
@@ -121,11 +130,17 @@ namespace repa.AR
             {
                 ListViewItem selectedItem = materialListRepuesto.SelectedItems[0];
 
+               String precioRep = selectedItem.SubItems[1].Text;
+                String precioVenta = selectedItem.SubItems[2].Text;
+
+                 precioRep = precioRep.Replace(",",".");
+                precioVenta = precioVenta.Replace(",", ".");
+
                 nombreRepuesto.Text = selectedItem.SubItems[0].Text;
-                precioRepuesto.Text = selectedItem.SubItems[1].Text;
-                precioVRepuesta.Text = selectedItem.SubItems[2].Text;
+                precioRepuesto.Text = precioRep;
+                precioVRepuesta.Text = precioVenta;
                 descripcionRepuesto.Text = selectedItem.SubItems[3].Text;
-                comboBox1.Text = selectedItem.SubItems[4].Text;
+                comboBox1.Text = "seleccionar categoria";
 
 
 
@@ -157,6 +172,104 @@ namespace repa.AR
             }
 
             
+        }
+
+        private void btnAgregarRep_Click(object sender, EventArgs e)
+        {
+          
+
+            String nombreRep = nombreRepuesto.Text;
+            String precioRep = precioRepuesto.Text;
+            String precioRepVenta = precioVRepuesta.Text;
+            String descriRep = descripcionRepuesto.Text;
+            int codigoFabricante = 1;
+            String elementoSelec = comboBox1.SelectedItem.ToString();
+
+            if (elementoSelec != null)
+            {
+
+
+
+                int sacarGuion = elementoSelec.IndexOf(" - ");
+
+                if (sacarGuion > -1)
+                {
+                    codigoFabricante = int.Parse(elementoSelec.Substring(0, sacarGuion).Trim());
+
+                }
+            }
+           
+           
+
+            abrirConexion();
+
+            String query = "INSERT INTO repuesto (nombre, fabricante, precio_compra, precio_venta, detalle) VALUES ('"+nombreRep+"' ,"+ codigoFabricante + ", "+precioRep + ", " + precioRepVenta + ", '"+ descriRep+"')";
+            Console.WriteLine(query);
+            SqlCommand comando = new SqlCommand(query,conect);
+             comando.ExecuteReader();
+            MessageBox.Show("se cargo el nuevo repuesto");
+            limpiarCamposRepuesto();
+            materialListRepuesto.Items.Clear();
+            mostrarRepuestos();
+        }
+
+        private void btnCambiosRep_Click(object sender, EventArgs e)
+        {
+            
+
+            
+            
+            ListViewItem selectedItem = materialListRepuesto.SelectedItems[0];
+
+            int idRepuestoMod = int.Parse(selectedItem.SubItems[5].Text);
+                
+
+            
+
+            String nombreRep = nombreRepuesto.Text;
+            String precioRep = precioRepuesto.Text;
+            String precioRepVenta = precioVRepuesta.Text;
+            String descriRep = descripcionRepuesto.Text;
+            int codigoFabricante = 1;
+            String elementoSelec = comboBox1.SelectedItem.ToString();
+
+            if (elementoSelec != null)
+            {
+
+
+
+                int sacarGuion = elementoSelec.IndexOf(" - ");
+
+                if (sacarGuion > -1)
+                {
+                    codigoFabricante = int.Parse(elementoSelec.Substring(0, sacarGuion).Trim());
+
+                }
+            }
+
+            abrirConexion();
+
+            String query = "UPDATE repuesto SET nombre = '" + nombreRep + "' ,fabricante= " + codigoFabricante + " ,precio_compra= " + precioRep + " ,precio_venta= " + precioRepVenta + " ,detalle = '" + descriRep + "'  WHERE id_repuesto = " + idRepuestoMod+";";
+            Console.WriteLine(query );
+            SqlCommand comando = new SqlCommand(query, conect);
+            comando.ExecuteReader();
+            MessageBox.Show("se modifico con exito el repuesto");
+            limpiarCamposRepuesto();
+            materialListRepuesto.Items.Clear();
+            mostrarRepuestos();
+        }
+
+        private void materialButton11_Click(object sender, EventArgs e)
+        {
+            comboBox1.Items.Clear();
+            SqlDataReader fabricantes = mostrarDatos("fabricante");
+
+            while (fabricantes.Read())
+            {
+                comboBox1.Items.Add(fabricantes["id_fabricante"].ToString() + " - " + fabricantes["nombre_fabricante"].ToString());
+            }
+            materialListRepuesto.Items.Clear();
+            mostrarRepuestos();
         }
     }
 }

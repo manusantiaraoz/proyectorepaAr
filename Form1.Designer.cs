@@ -112,6 +112,7 @@
             this.materialLabel33 = new MaterialSkin.Controls.MaterialLabel();
             this.materialListBox4 = new MaterialSkin.Controls.MaterialListBox();
             this.materialLabel34 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialButton11 = new MaterialSkin.Controls.MaterialButton();
             materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
@@ -618,6 +619,7 @@
             // 
             // repuestos
             // 
+            this.repuestos.Controls.Add(this.materialButton11);
             this.repuestos.Controls.Add(this.materialLabel12);
             this.repuestos.Controls.Add(this.materialLabel14);
             this.repuestos.Controls.Add(this.materialListRepuesto);
@@ -782,6 +784,7 @@
             this.btnCambiosRep.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btnCambiosRep.UseAccentColor = false;
             this.btnCambiosRep.UseVisualStyleBackColor = true;
+            this.btnCambiosRep.Click += new System.EventHandler(this.btnCambiosRep_Click);
             // 
             // btnBorrarRep
             // 
@@ -830,6 +833,7 @@
             this.btnAgregarRep.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btnAgregarRep.UseAccentColor = false;
             this.btnAgregarRep.UseVisualStyleBackColor = true;
+            this.btnAgregarRep.Click += new System.EventHandler(this.btnAgregarRep_Click);
             // 
             // materialLabel13
             // 
@@ -884,7 +888,7 @@
             this.materialLabel19.Font = new System.Drawing.Font("Roboto Medium", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.materialLabel19.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
             this.materialLabel19.ForeColor = System.Drawing.Color.Black;
-            this.materialLabel19.Location = new System.Drawing.Point(305, 117);
+            this.materialLabel19.Location = new System.Drawing.Point(247, 114);
             this.materialLabel19.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel19.Name = "materialLabel19";
             this.materialLabel19.Size = new System.Drawing.Size(292, 32);
@@ -901,6 +905,7 @@
             this.precioRepuesto.Cursor = System.Windows.Forms.Cursors.Default;
             this.precioRepuesto.Depth = 0;
             this.precioRepuesto.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.precioRepuesto.HelperText = "agrega el dato con \". \" no con \".\"";
             this.precioRepuesto.HideSelection = true;
             this.precioRepuesto.LeadingIcon = null;
             this.precioRepuesto.Location = new System.Drawing.Point(226, 168);
@@ -1760,6 +1765,28 @@
             this.materialLabel34.Text = "listado de presupuestos";
             this.materialLabel34.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // materialButton11
+            // 
+            this.materialButton11.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButton11.Depth = 0;
+            this.materialButton11.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.materialButton11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.materialButton11.ForeColor = System.Drawing.Color.AntiqueWhite;
+            this.materialButton11.HighEmphasis = true;
+            this.materialButton11.Icon = null;
+            this.materialButton11.Location = new System.Drawing.Point(715, 312);
+            this.materialButton11.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialButton11.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton11.Name = "materialButton11";
+            this.materialButton11.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButton11.Size = new System.Drawing.Size(64, 36);
+            this.materialButton11.TabIndex = 35;
+            this.materialButton11.Text = "🔄";
+            this.materialButton11.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton11.UseAccentColor = false;
+            this.materialButton11.UseVisualStyleBackColor = true;
+            this.materialButton11.Click += new System.EventHandler(this.materialButton11_Click);
+            // 
             // repaAr
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1820,7 +1847,6 @@
         private MaterialSkin.Controls.MaterialTextBox2 precioRepuesto;
         private MaterialSkin.Controls.MaterialTextBox2 precioVRepuesta;
         private MaterialSkin.Controls.MaterialTextBox2 nombreRepuesto;
-        private System.Windows.Forms.ComboBox comboBox1;
         private MaterialSkin.Controls.MaterialButton btnCambiosRep;
         private MaterialSkin.Controls.MaterialButton btnBorrarRep;
         private MaterialSkin.Controls.MaterialLabel materialLabel16;
@@ -1870,6 +1896,8 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel12;
         private MaterialSkin.Controls.MaterialLabel materialLabel14;
         private System.Windows.Forms.ColumnHeader columnHeader6;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private MaterialSkin.Controls.MaterialButton materialButton11;
     }
 }
 
