@@ -21,6 +21,9 @@ namespace repa.AR
         }
         SqlConnection conect = new SqlConnection("server= DESKTOP-RIS98MF ; database= repaArbd ;integrated security = true");
 
+
+        private List<string> repuestoLista = new List<string>();
+
         //codigo auxiliar de conexiones y consultas
         private void abrirConexion()
         {
@@ -74,7 +77,49 @@ namespace repa.AR
                 adminTelefono.Text = admin["telefono"].ToString();
             }
             conect.Close();
-        } 
+        }
+
+        private void mostrarDatosCliente()
+        {
+            abrirConexion();
+            String query = "SELECT id_cliente, nombre, apellido, cuil, telefono, direccion   FROM cliente ";
+            SqlCommand comando = new SqlCommand(query, conect);
+            SqlDataReader respuesta = comando.ExecuteReader();
+
+
+            while (respuesta.Read())
+            {
+                ListViewItem rep = new ListViewItem(respuesta["nombre"].ToString());
+                rep.SubItems.Add(respuesta["apellido"].ToString());
+                rep.SubItems.Add(respuesta["cuil"].ToString());
+                rep.SubItems.Add(respuesta["telefono"].ToString());
+                rep.SubItems.Add(respuesta["direccion"].ToString());
+                rep.SubItems.Add(respuesta["id_cliente"].ToString());
+
+                materialListClientes.Items.Add(rep);
+
+            }
+            conect.Close();
+        }
+
+        private void mostrarDatosFabricante()
+        {
+            abrirConexion();
+            String query = "SELECT id_fabricante, nombre_fabricante FROM fabricante";
+            SqlCommand comando = new SqlCommand(query, conect);
+            SqlDataReader respuesta = comando.ExecuteReader();
+
+
+            while (respuesta.Read())
+            {
+                ListViewItem rep = new ListViewItem(respuesta["nombre_fabricante"].ToString());
+                rep.SubItems.Add(respuesta["id_fabricante"].ToString());
+                
+                materialListFabricante.Items.Add(rep);
+
+            }
+            conect.Close();
+        }
 
         private void guardarCmbiosAdmin()
         {
@@ -95,6 +140,8 @@ namespace repa.AR
             conect.Close();
         }
 
+
+
         private void limpiarCamposRepuesto()
         {
             nombreRepuesto.Clear();
@@ -102,6 +149,21 @@ namespace repa.AR
             precioVRepuesta.Clear(); 
             descripcionRepuesto.Clear(); 
             comboBox1.Items.Clear(); 
+        }
+
+        private void limpiarCamposCliente()
+        {
+            campoNombreCliente.Clear();
+            campoApellidoCliente.Clear();
+            campoCuilCliente.Clear();
+            campoDireccionCliente.Clear();
+            campoTelefonoCliente.Clear();
+        }
+
+        private void limpiarCampoFabricante()
+        {
+            campoNombreFabricante.Clear();
+            
         }
 
         private void inicio_Click(object sender, EventArgs e)
@@ -204,7 +266,7 @@ namespace repa.AR
             abrirConexion();
 
             String query = "INSERT INTO repuesto (nombre, fabricante, precio_compra, precio_venta, detalle) VALUES ('"+nombreRep+"' ,"+ codigoFabricante + ", "+precioRep + ", " + precioRepVenta + ", '"+ descriRep+"')";
-            Console.WriteLine(query);
+            
             SqlCommand comando = new SqlCommand(query,conect);
              comando.ExecuteReader();
             MessageBox.Show("se cargo el nuevo repuesto");
@@ -270,6 +332,267 @@ namespace repa.AR
             }
             materialListRepuesto.Items.Clear();
             mostrarRepuestos();
+        }
+
+        private void cargarClientes_Click(object sender, EventArgs e)
+        {
+            mostrarDatosCliente();
+        }
+
+        private void materialListClientes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (materialListClientes.SelectedItems.Count > 0)
+            {
+                ListViewItem selectedItem = materialListClientes.SelectedItems[0];
+
+                campoNombreCliente.Text = selectedItem.SubItems[0].Text;
+                campoApellidoCliente.Text = selectedItem.SubItems[1].Text;
+                campoCuilCliente.Text = selectedItem.SubItems[2].Text;
+                campoTelefonoCliente.Text = selectedItem.SubItems[3].Text;
+                campoDireccionCliente.Text = selectedItem.SubItems[4].Text;
+            }
+        }
+
+        private void materialButton2_Click(object sender, EventArgs e)
+        {
+
+            int id_cliente = 0;
+            if (materialListClientes.SelectedItems.Count > 0)
+            {
+                ListViewItem selectedItem = materialListClientes.SelectedItems[0];
+
+                id_cliente = int.Parse(selectedItem.SubItems[5].Text);
+            }
+
+
+            String nombreCliente = campoNombreCliente.Text;
+            String apellidoCliente = campoApellidoCliente.Text;
+            String cuilCliente = campoCuilCliente.Text;
+            String telefonoCliente = campoTelefonoCliente.Text;
+            String direCliente = campoDireccionCliente.Text;
+           
+         
+
+            abrirConexion();
+
+            String query = "UPDATE cliente SET nombre = '" + nombreCliente + "' ,apellido= '" + apellidoCliente + "' ,cuil= " + cuilCliente + " ,telefono= " + telefonoCliente + " ,direccion = '" + direCliente + "'  WHERE id_cliente = " + id_cliente + ";";
+           
+            SqlCommand comando = new SqlCommand(query, conect);
+           comando.ExecuteReader();
+             MessageBox.Show("se modifico cliente con exito");
+            limpiarCamposCliente();
+            materialListClientes.Items.Clear();
+            mostrarDatosCliente();
+        }
+
+        private void materialButton3_Click(object sender, EventArgs e)
+        {
+            int id_cliente = 0;
+            if (materialListClientes.SelectedItems.Count > 0)
+            {
+                ListViewItem selectedItem = materialListClientes.SelectedItems[0];
+
+                id_cliente = int.Parse(selectedItem.SubItems[5].Text);
+            }
+
+            abrirConexion();
+
+            String query = "DELETE cliente WHERE id_cliente = "+id_cliente + ";";
+            
+            SqlCommand comando = new SqlCommand(query, conect);
+            comando.ExecuteReader();
+            MessageBox.Show("se modifico cliente con exito");
+            limpiarCamposCliente();
+            materialListClientes.Items.Clear();
+            mostrarDatosCliente();
+
+        }
+
+        private void materialButton4_Click(object sender, EventArgs e)
+        {
+
+            String nombreCliente = campoNombreCliente.Text;
+            String apellidoCliente = campoApellidoCliente.Text;
+            String cuilCliente = campoCuilCliente.Text;
+            String telefonoCliente = campoTelefonoCliente.Text;
+            String direCliente = campoDireccionCliente.Text;
+
+            abrirConexion();
+
+            String query = "insert into cliente (nombre, apellido, cuil, telefono, direccion) VALUES ('" + nombreCliente + "', '" + apellidoCliente + "', " +cuilCliente +", "+telefonoCliente +",'"+ direCliente+ "');";
+           
+            SqlCommand comando = new SqlCommand(query, conect);
+           comando.ExecuteReader();
+            MessageBox.Show("se agrego cliente con exito");
+            limpiarCamposCliente();
+            materialListClientes.Items.Clear();
+            mostrarDatosCliente();
+
+
+        }
+
+        private void materialButton12_Click(object sender, EventArgs e)
+        {
+            mostrarDatosFabricante();
+        }
+
+        private void materialListFabricante_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int id_fab = 0;
+            if (materialListFabricante.SelectedItems.Count > 0)
+            {
+                ListViewItem selectedItem = materialListFabricante.SelectedItems[0];
+
+                campoNombreFabricante.Text = selectedItem.SubItems[0].Text;
+                id_fab = int.Parse(selectedItem.SubItems[1].Text);
+               
+            }
+        }
+
+        private void materialButton6_Click(object sender, EventArgs e)
+        {
+            int id_fab = 0;
+            if (materialListFabricante.SelectedItems.Count > 0)
+            {
+                ListViewItem selectedItem = materialListFabricante.SelectedItems[0];
+                id_fab = int.Parse(selectedItem.SubItems[1].Text);
+
+            }
+
+            abrirConexion();
+
+            String query = "DELETE fabricante WHERE id_fabricante = " + id_fab + ";";
+           
+            SqlCommand comando = new SqlCommand(query, conect);
+            comando.ExecuteReader();
+            MessageBox.Show("se elimino fabricante con exito");
+            limpiarCampoFabricante();
+            materialListFabricante.Items.Clear();
+            mostrarDatosFabricante();
+
+
+        }
+
+        private void materialButton7_Click(object sender, EventArgs e)
+        {
+
+            String campoNombre = campoNombreFabricante.Text;
+
+            abrirConexion();
+
+            String query = "insert into fabricante (nombre_fabricante) VALUES ('" + campoNombre + "');";
+
+            SqlCommand comando = new SqlCommand(query, conect);
+            comando.ExecuteReader();
+            MessageBox.Show("se agrego cliente con exito");
+            limpiarCampoFabricante();
+            materialListFabricante.Items.Clear();
+            mostrarDatosFabricante();
+
+        }
+
+        private void materialButton5_Click(object sender, EventArgs e)
+        {
+            int id_fab = 0;
+            if (materialListFabricante.SelectedItems.Count > 0)
+            {
+                ListViewItem selectedItem = materialListFabricante.SelectedItems[0];
+                id_fab = int.Parse(selectedItem.SubItems[1].Text);
+
+            }
+
+           String nombre_fab = campoNombreFabricante.Text;
+
+            abrirConexion();
+
+            String query = "UPDATE fabricante SET nombre_fabricante = '" + nombre_fab+ "'  WHERE id_fabricante = " + id_fab + ";";
+            
+            SqlCommand comando = new SqlCommand(query, conect);
+            comando.ExecuteReader();
+            MessageBox.Show("se modifico cliente con exito");
+            limpiarCampoFabricante();
+            materialListFabricante.Items.Clear();
+            mostrarDatosFabricante();
+        }
+
+
+        private void CheckedListBox1_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+            string item = checkedListBox1.Items[e.Index].ToString();
+
+            if (e.NewValue == CheckState.Checked)
+            {
+                // Agregar al array cuando se selecciona
+                repuestoLista.Add(item);
+                
+            }
+            else
+            {
+                // Eliminar del array cuando se deselecciona
+                repuestoLista.Remove(item);
+                
+            }
+
+
+            decimal subTotal = 0;
+            foreach (var items in repuestoLista)
+            {
+                string input = items.ToLower();
+
+
+            string priceString = input.Substring(input.IndexOf('$') + 1, input.IndexOf('-') - input.IndexOf('$') - 1);
+
+
+                if (decimal.TryParse(priceString, out decimal price))
+                {
+                    subTotal = subTotal + price;
+                 }
+                  else
+                 {
+                     Console.WriteLine("No se pudo extraer el precio correctamente.");
+                 }
+
+            }
+
+            campoSubTotal.Text = subTotal.ToString();
+
+
+        }
+ 
+
+     
+        private void materialButton13_Click(object sender, EventArgs e)
+        {
+            comboBox2.Items.Clear();
+            SqlDataReader clientes = mostrarDatos("cliente");
+
+            while (clientes.Read())
+            {
+                comboBox2.Items.Add(clientes["nombre"].ToString() + " " + clientes["apellido"].ToString() + ";  cuil:" + clientes["cuil"].ToString() + " - " + clientes["id_cliente"].ToString());
+            }
+
+
+            checkedListBox1.Items.Clear();
+
+            abrirConexion();
+            String query = "SELECT r.id_repuesto, r.nombre, r.precio_venta, r.precio_compra, r.detalle, f.nombre_fabricante, f.id_fabricante FROM repuesto AS r INNER JOIN fabricante AS f on r.fabricante = f.id_fabricante ";
+            SqlCommand comando = new SqlCommand(query, conect);
+            SqlDataReader repuestos = comando.ExecuteReader();
+
+            while (repuestos.Read())
+            {
+                checkedListBox1.Items.Add("nombre: "+repuestos["nombre"].ToString() + "; " +"fabricante:"+ repuestos["nombre_fabricante"].ToString() +" precio: $" + repuestos["precio_venta"].ToString() + " - " + repuestos["id_repuesto"].ToString());
+            }
+        }
+
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+
+        }
+
+        private void printPreviewControl1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

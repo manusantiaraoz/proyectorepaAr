@@ -52,6 +52,7 @@
             this.adminApellido = new MaterialSkin.Controls.MaterialTextBox2();
             this.adminNombre = new MaterialSkin.Controls.MaterialTextBox2();
             this.repuestos = new System.Windows.Forms.TabPage();
+            this.materialButton11 = new MaterialSkin.Controls.MaterialButton();
             this.materialLabel12 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel14 = new MaterialSkin.Controls.MaterialLabel();
             this.materialListRepuesto = new MaterialSkin.Controls.MaterialListView();
@@ -74,33 +75,45 @@
             this.precioVRepuesta = new MaterialSkin.Controls.MaterialTextBox2();
             this.nombreRepuesto = new MaterialSkin.Controls.MaterialTextBox2();
             this.clientes = new System.Windows.Forms.TabPage();
+            this.cargarClientes = new MaterialSkin.Controls.MaterialButton();
+            this.materialListClientes = new MaterialSkin.Controls.MaterialListView();
+            this.nombreCliente = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.apellidoCliente = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cuilCliente = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.telefonoCliente = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.direccionCliente = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.id_cliente = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.materialLabel16 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel20 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel21 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel24 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel25 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialTextBox25 = new MaterialSkin.Controls.MaterialTextBox2();
-            this.materialTextBox26 = new MaterialSkin.Controls.MaterialTextBox2();
-            this.materialTextBox27 = new MaterialSkin.Controls.MaterialTextBox2();
-            this.materialTextBox28 = new MaterialSkin.Controls.MaterialTextBox2();
-            this.materialTextBox29 = new MaterialSkin.Controls.MaterialTextBox2();
+            this.campoTelefonoCliente = new MaterialSkin.Controls.MaterialTextBox2();
+            this.campoDireccionCliente = new MaterialSkin.Controls.MaterialTextBox2();
+            this.campoCuilCliente = new MaterialSkin.Controls.MaterialTextBox2();
+            this.campoApellidoCliente = new MaterialSkin.Controls.MaterialTextBox2();
+            this.campoNombreCliente = new MaterialSkin.Controls.MaterialTextBox2();
             this.materialButton2 = new MaterialSkin.Controls.MaterialButton();
             this.materialButton3 = new MaterialSkin.Controls.MaterialButton();
             this.materialButton4 = new MaterialSkin.Controls.MaterialButton();
             this.materialLabel22 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialListBox2 = new MaterialSkin.Controls.MaterialListBox();
             this.materialLabel23 = new MaterialSkin.Controls.MaterialLabel();
             this.fabricantes = new System.Windows.Forms.TabPage();
+            this.materialButton12 = new MaterialSkin.Controls.MaterialButton();
+            this.materialListFabricante = new MaterialSkin.Controls.MaterialListView();
+            this.nombreFabricante = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.id_Fabricante = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.materialLabel29 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialTextBox213 = new MaterialSkin.Controls.MaterialTextBox2();
+            this.campoNombreFabricante = new MaterialSkin.Controls.MaterialTextBox2();
             this.materialButton5 = new MaterialSkin.Controls.MaterialButton();
             this.materialButton6 = new MaterialSkin.Controls.MaterialButton();
             this.materialButton7 = new MaterialSkin.Controls.MaterialButton();
             this.materialLabel30 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialListBox3 = new MaterialSkin.Controls.MaterialListBox();
             this.materialLabel31 = new MaterialSkin.Controls.MaterialLabel();
             this.presupuestos = new System.Windows.Forms.TabPage();
-            this.materialTextBox24 = new MaterialSkin.Controls.MaterialTextBox2();
+            this.campoSubTotal = new MaterialSkin.Controls.MaterialTextBox2();
+            this.materialMultiLineTextBox1 = new MaterialSkin.Controls.MaterialMultiLineTextBox();
+            this.materialButton13 = new MaterialSkin.Controls.MaterialButton();
             this.materialLabel18 = new MaterialSkin.Controls.MaterialLabel();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
@@ -112,7 +125,8 @@
             this.materialLabel33 = new MaterialSkin.Controls.MaterialLabel();
             this.materialListBox4 = new MaterialSkin.Controls.MaterialListBox();
             this.materialLabel34 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialButton11 = new MaterialSkin.Controls.MaterialButton();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.materialLabel27 = new MaterialSkin.Controls.MaterialLabel();
             materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
@@ -644,6 +658,29 @@
             this.repuestos.UseVisualStyleBackColor = true;
             this.repuestos.Click += new System.EventHandler(this.repuestos_Click);
             // 
+            // materialButton11
+            // 
+            this.materialButton11.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButton11.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButton11.Depth = 0;
+            this.materialButton11.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.materialButton11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.materialButton11.ForeColor = System.Drawing.Color.AntiqueWhite;
+            this.materialButton11.HighEmphasis = true;
+            this.materialButton11.Icon = null;
+            this.materialButton11.Location = new System.Drawing.Point(715, 312);
+            this.materialButton11.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialButton11.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton11.Name = "materialButton11";
+            this.materialButton11.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButton11.Size = new System.Drawing.Size(64, 36);
+            this.materialButton11.TabIndex = 35;
+            this.materialButton11.Text = "🔄";
+            this.materialButton11.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton11.UseAccentColor = false;
+            this.materialButton11.UseVisualStyleBackColor = true;
+            this.materialButton11.Click += new System.EventHandler(this.materialButton11_Click);
+            // 
             // materialLabel12
             // 
             this.materialLabel12.BackColor = System.Drawing.Color.Azure;
@@ -769,8 +806,12 @@
             // 
             this.btnCambiosRep.AutoSize = false;
             this.btnCambiosRep.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnCambiosRep.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Dense;
+            this.btnCambiosRep.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnCambiosRep.CharacterCasing = MaterialSkin.Controls.MaterialButton.CharacterCasingEnum.Title;
+            this.btnCambiosRep.Cursor = System.Windows.Forms.Cursors.WaitCursor;
+            this.btnCambiosRep.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.btnCambiosRep.Depth = 0;
+            this.btnCambiosRep.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCambiosRep.HighEmphasis = true;
             this.btnCambiosRep.Icon = null;
             this.btnCambiosRep.Location = new System.Drawing.Point(470, 312);
@@ -784,13 +825,18 @@
             this.btnCambiosRep.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btnCambiosRep.UseAccentColor = false;
             this.btnCambiosRep.UseVisualStyleBackColor = true;
+            this.btnCambiosRep.UseWaitCursor = true;
             this.btnCambiosRep.Click += new System.EventHandler(this.btnCambiosRep_Click);
             // 
             // btnBorrarRep
             // 
             this.btnBorrarRep.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnBorrarRep.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Dense;
+            this.btnBorrarRep.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnBorrarRep.CharacterCasing = MaterialSkin.Controls.MaterialButton.CharacterCasingEnum.Title;
+            this.btnBorrarRep.Cursor = System.Windows.Forms.Cursors.WaitCursor;
+            this.btnBorrarRep.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.btnBorrarRep.Depth = 0;
+            this.btnBorrarRep.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBorrarRep.HighEmphasis = true;
             this.btnBorrarRep.Icon = null;
             this.btnBorrarRep.Location = new System.Drawing.Point(371, 312);
@@ -804,6 +850,7 @@
             this.btnBorrarRep.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btnBorrarRep.UseAccentColor = false;
             this.btnBorrarRep.UseVisualStyleBackColor = true;
+            this.btnBorrarRep.UseWaitCursor = true;
             this.btnBorrarRep.Click += new System.EventHandler(this.btnBorrarRep_Click);
             // 
             // comboBox1
@@ -818,8 +865,12 @@
             // btnAgregarRep
             // 
             this.btnAgregarRep.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnAgregarRep.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Dense;
+            this.btnAgregarRep.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnAgregarRep.CharacterCasing = MaterialSkin.Controls.MaterialButton.CharacterCasingEnum.Title;
+            this.btnAgregarRep.Cursor = System.Windows.Forms.Cursors.WaitCursor;
+            this.btnAgregarRep.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.btnAgregarRep.Depth = 0;
+            this.btnAgregarRep.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregarRep.HighEmphasis = true;
             this.btnAgregarRep.Icon = null;
             this.btnAgregarRep.Location = new System.Drawing.Point(260, 312);
@@ -833,6 +884,7 @@
             this.btnAgregarRep.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btnAgregarRep.UseAccentColor = false;
             this.btnAgregarRep.UseVisualStyleBackColor = true;
+            this.btnAgregarRep.UseWaitCursor = true;
             this.btnAgregarRep.Click += new System.EventHandler(this.btnAgregarRep_Click);
             // 
             // materialLabel13
@@ -997,21 +1049,22 @@
             // 
             // clientes
             // 
+            this.clientes.Controls.Add(this.cargarClientes);
+            this.clientes.Controls.Add(this.materialListClientes);
             this.clientes.Controls.Add(this.materialLabel16);
             this.clientes.Controls.Add(this.materialLabel20);
             this.clientes.Controls.Add(this.materialLabel21);
             this.clientes.Controls.Add(this.materialLabel24);
             this.clientes.Controls.Add(this.materialLabel25);
-            this.clientes.Controls.Add(this.materialTextBox25);
-            this.clientes.Controls.Add(this.materialTextBox26);
-            this.clientes.Controls.Add(this.materialTextBox27);
-            this.clientes.Controls.Add(this.materialTextBox28);
-            this.clientes.Controls.Add(this.materialTextBox29);
+            this.clientes.Controls.Add(this.campoTelefonoCliente);
+            this.clientes.Controls.Add(this.campoDireccionCliente);
+            this.clientes.Controls.Add(this.campoCuilCliente);
+            this.clientes.Controls.Add(this.campoApellidoCliente);
+            this.clientes.Controls.Add(this.campoNombreCliente);
             this.clientes.Controls.Add(this.materialButton2);
             this.clientes.Controls.Add(this.materialButton3);
             this.clientes.Controls.Add(this.materialButton4);
             this.clientes.Controls.Add(this.materialLabel22);
-            this.clientes.Controls.Add(this.materialListBox2);
             this.clientes.Controls.Add(this.materialLabel23);
             this.clientes.Location = new System.Drawing.Point(4, 4);
             this.clientes.Name = "clientes";
@@ -1021,6 +1074,84 @@
             this.clientes.Text = "clientes";
             this.clientes.UseVisualStyleBackColor = true;
             // 
+            // cargarClientes
+            // 
+            this.cargarClientes.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.cargarClientes.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.cargarClientes.Depth = 0;
+            this.cargarClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.cargarClientes.HighEmphasis = true;
+            this.cargarClientes.Icon = null;
+            this.cargarClientes.Location = new System.Drawing.Point(282, 9);
+            this.cargarClientes.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.cargarClientes.MouseState = MaterialSkin.MouseState.HOVER;
+            this.cargarClientes.Name = "cargarClientes";
+            this.cargarClientes.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.cargarClientes.Size = new System.Drawing.Size(64, 36);
+            this.cargarClientes.TabIndex = 58;
+            this.cargarClientes.Text = "🔄";
+            this.cargarClientes.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.cargarClientes.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.cargarClientes.UseAccentColor = false;
+            this.cargarClientes.UseVisualStyleBackColor = true;
+            this.cargarClientes.Click += new System.EventHandler(this.cargarClientes_Click);
+            // 
+            // materialListClientes
+            // 
+            this.materialListClientes.AutoSizeTable = false;
+            this.materialListClientes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialListClientes.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.materialListClientes.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.nombreCliente,
+            this.apellidoCliente,
+            this.cuilCliente,
+            this.telefonoCliente,
+            this.direccionCliente,
+            this.id_cliente});
+            this.materialListClientes.Depth = 0;
+            this.materialListClientes.FullRowSelect = true;
+            this.materialListClientes.HideSelection = false;
+            this.materialListClientes.Location = new System.Drawing.Point(12, 45);
+            this.materialListClientes.MinimumSize = new System.Drawing.Size(200, 100);
+            this.materialListClientes.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.materialListClientes.MouseState = MaterialSkin.MouseState.OUT;
+            this.materialListClientes.Name = "materialListClientes";
+            this.materialListClientes.OwnerDraw = true;
+            this.materialListClientes.Size = new System.Drawing.Size(263, 288);
+            this.materialListClientes.TabIndex = 57;
+            this.materialListClientes.UseCompatibleStateImageBehavior = false;
+            this.materialListClientes.View = System.Windows.Forms.View.Details;
+            this.materialListClientes.SelectedIndexChanged += new System.EventHandler(this.materialListClientes_SelectedIndexChanged);
+            // 
+            // nombreCliente
+            // 
+            this.nombreCliente.Text = "nombre";
+            this.nombreCliente.Width = 129;
+            // 
+            // apellidoCliente
+            // 
+            this.apellidoCliente.Text = "apellido";
+            this.apellidoCliente.Width = 137;
+            // 
+            // cuilCliente
+            // 
+            this.cuilCliente.Text = "cuil";
+            this.cuilCliente.Width = 84;
+            // 
+            // telefonoCliente
+            // 
+            this.telefonoCliente.Text = "telefono";
+            this.telefonoCliente.Width = 113;
+            // 
+            // direccionCliente
+            // 
+            this.direccionCliente.Text = "direccion";
+            this.direccionCliente.Width = 165;
+            // 
+            // id_cliente
+            // 
+            this.id_cliente.Text = "id_cliente";
+            // 
             // materialLabel16
             // 
             this.materialLabel16.BackColor = System.Drawing.Color.Azure;
@@ -1028,7 +1159,7 @@
             this.materialLabel16.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.materialLabel16.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.materialLabel16.ForeColor = System.Drawing.Color.Black;
-            this.materialLabel16.Location = new System.Drawing.Point(408, 126);
+            this.materialLabel16.Location = new System.Drawing.Point(426, 138);
             this.materialLabel16.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel16.Name = "materialLabel16";
             this.materialLabel16.Size = new System.Drawing.Size(221, 19);
@@ -1043,7 +1174,7 @@
             this.materialLabel20.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.materialLabel20.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.materialLabel20.ForeColor = System.Drawing.Color.Black;
-            this.materialLabel20.Location = new System.Drawing.Point(569, 188);
+            this.materialLabel20.Location = new System.Drawing.Point(587, 200);
             this.materialLabel20.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel20.Name = "materialLabel20";
             this.materialLabel20.Size = new System.Drawing.Size(123, 19);
@@ -1058,7 +1189,7 @@
             this.materialLabel21.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.materialLabel21.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.materialLabel21.ForeColor = System.Drawing.Color.Black;
-            this.materialLabel21.Location = new System.Drawing.Point(346, 186);
+            this.materialLabel21.Location = new System.Drawing.Point(364, 198);
             this.materialLabel21.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel21.Name = "materialLabel21";
             this.materialLabel21.Size = new System.Drawing.Size(123, 21);
@@ -1073,7 +1204,7 @@
             this.materialLabel24.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.materialLabel24.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.materialLabel24.ForeColor = System.Drawing.Color.Black;
-            this.materialLabel24.Location = new System.Drawing.Point(521, 56);
+            this.materialLabel24.Location = new System.Drawing.Point(539, 68);
             this.materialLabel24.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel24.Name = "materialLabel24";
             this.materialLabel24.Size = new System.Drawing.Size(227, 21);
@@ -1088,7 +1219,7 @@
             this.materialLabel25.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.materialLabel25.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.materialLabel25.ForeColor = System.Drawing.Color.Black;
-            this.materialLabel25.Location = new System.Drawing.Point(279, 56);
+            this.materialLabel25.Location = new System.Drawing.Point(297, 68);
             this.materialLabel25.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel25.Name = "materialLabel25";
             this.materialLabel25.Size = new System.Drawing.Size(225, 21);
@@ -1096,197 +1227,214 @@
             this.materialLabel25.Text = "nombre/s";
             this.materialLabel25.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // materialTextBox25
+            // campoTelefonoCliente
             // 
-            this.materialTextBox25.AnimateReadOnly = false;
-            this.materialTextBox25.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.materialTextBox25.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.materialTextBox25.Cursor = System.Windows.Forms.Cursors.Default;
-            this.materialTextBox25.Depth = 0;
-            this.materialTextBox25.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.materialTextBox25.HideSelection = true;
-            this.materialTextBox25.LeadingIcon = null;
-            this.materialTextBox25.Location = new System.Drawing.Point(569, 207);
-            this.materialTextBox25.Margin = new System.Windows.Forms.Padding(0);
-            this.materialTextBox25.MaxLength = 32767;
-            this.materialTextBox25.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox25.Name = "materialTextBox25";
-            this.materialTextBox25.PasswordChar = '\0';
-            this.materialTextBox25.PrefixSuffixText = null;
-            this.materialTextBox25.ReadOnly = false;
-            this.materialTextBox25.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.materialTextBox25.SelectedText = "";
-            this.materialTextBox25.SelectionLength = 0;
-            this.materialTextBox25.SelectionStart = 0;
-            this.materialTextBox25.ShortcutsEnabled = false;
-            this.materialTextBox25.Size = new System.Drawing.Size(123, 36);
-            this.materialTextBox25.TabIndex = 50;
-            this.materialTextBox25.TabStop = false;
-            this.materialTextBox25.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.materialTextBox25.TrailingIcon = null;
-            this.materialTextBox25.UseAccent = false;
-            this.materialTextBox25.UseSystemPasswordChar = false;
-            this.materialTextBox25.UseTallSize = false;
+            this.campoTelefonoCliente.AnimateReadOnly = false;
+            this.campoTelefonoCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.campoTelefonoCliente.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.campoTelefonoCliente.Cursor = System.Windows.Forms.Cursors.Default;
+            this.campoTelefonoCliente.Depth = 0;
+            this.campoTelefonoCliente.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.campoTelefonoCliente.HideSelection = true;
+            this.campoTelefonoCliente.LeadingIcon = null;
+            this.campoTelefonoCliente.Location = new System.Drawing.Point(587, 219);
+            this.campoTelefonoCliente.Margin = new System.Windows.Forms.Padding(0);
+            this.campoTelefonoCliente.MaxLength = 32767;
+            this.campoTelefonoCliente.MouseState = MaterialSkin.MouseState.OUT;
+            this.campoTelefonoCliente.Name = "campoTelefonoCliente";
+            this.campoTelefonoCliente.PasswordChar = '\0';
+            this.campoTelefonoCliente.PrefixSuffixText = null;
+            this.campoTelefonoCliente.ReadOnly = false;
+            this.campoTelefonoCliente.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.campoTelefonoCliente.SelectedText = "";
+            this.campoTelefonoCliente.SelectionLength = 0;
+            this.campoTelefonoCliente.SelectionStart = 0;
+            this.campoTelefonoCliente.ShortcutsEnabled = false;
+            this.campoTelefonoCliente.Size = new System.Drawing.Size(123, 36);
+            this.campoTelefonoCliente.TabIndex = 49;
+            this.campoTelefonoCliente.TabStop = false;
+            this.campoTelefonoCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.campoTelefonoCliente.TrailingIcon = null;
+            this.campoTelefonoCliente.UseAccent = false;
+            this.campoTelefonoCliente.UseSystemPasswordChar = false;
+            this.campoTelefonoCliente.UseTallSize = false;
             // 
-            // materialTextBox26
+            // campoDireccionCliente
             // 
-            this.materialTextBox26.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.campoDireccionCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.materialTextBox26.AnimateReadOnly = false;
-            this.materialTextBox26.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.materialTextBox26.CausesValidation = false;
-            this.materialTextBox26.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.materialTextBox26.Cursor = System.Windows.Forms.Cursors.Default;
-            this.materialTextBox26.Depth = 0;
-            this.materialTextBox26.Font = new System.Drawing.Font("MS PGothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.materialTextBox26.HideSelection = true;
-            this.materialTextBox26.LeadingIcon = null;
-            this.materialTextBox26.Location = new System.Drawing.Point(411, 145);
-            this.materialTextBox26.Margin = new System.Windows.Forms.Padding(0);
-            this.materialTextBox26.MaxLength = 32767;
-            this.materialTextBox26.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox26.Name = "materialTextBox26";
-            this.materialTextBox26.PasswordChar = '\0';
-            this.materialTextBox26.PrefixSuffixText = null;
-            this.materialTextBox26.ReadOnly = false;
-            this.materialTextBox26.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.materialTextBox26.SelectedText = "";
-            this.materialTextBox26.SelectionLength = 0;
-            this.materialTextBox26.SelectionStart = 0;
-            this.materialTextBox26.ShortcutsEnabled = false;
-            this.materialTextBox26.Size = new System.Drawing.Size(215, 36);
-            this.materialTextBox26.TabIndex = 48;
-            this.materialTextBox26.TabStop = false;
-            this.materialTextBox26.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.materialTextBox26.TrailingIcon = null;
-            this.materialTextBox26.UseAccent = false;
-            this.materialTextBox26.UseSystemPasswordChar = false;
-            this.materialTextBox26.UseTallSize = false;
+            this.campoDireccionCliente.AnimateReadOnly = false;
+            this.campoDireccionCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.campoDireccionCliente.CausesValidation = false;
+            this.campoDireccionCliente.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.campoDireccionCliente.Cursor = System.Windows.Forms.Cursors.Default;
+            this.campoDireccionCliente.Depth = 0;
+            this.campoDireccionCliente.Font = new System.Drawing.Font("MS PGothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.campoDireccionCliente.HideSelection = true;
+            this.campoDireccionCliente.LeadingIcon = null;
+            this.campoDireccionCliente.Location = new System.Drawing.Point(429, 157);
+            this.campoDireccionCliente.Margin = new System.Windows.Forms.Padding(0);
+            this.campoDireccionCliente.MaxLength = 32767;
+            this.campoDireccionCliente.MouseState = MaterialSkin.MouseState.OUT;
+            this.campoDireccionCliente.Name = "campoDireccionCliente";
+            this.campoDireccionCliente.PasswordChar = '\0';
+            this.campoDireccionCliente.PrefixSuffixText = null;
+            this.campoDireccionCliente.ReadOnly = false;
+            this.campoDireccionCliente.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.campoDireccionCliente.SelectedText = "";
+            this.campoDireccionCliente.SelectionLength = 0;
+            this.campoDireccionCliente.SelectionStart = 0;
+            this.campoDireccionCliente.ShortcutsEnabled = false;
+            this.campoDireccionCliente.Size = new System.Drawing.Size(215, 36);
+            this.campoDireccionCliente.TabIndex = 47;
+            this.campoDireccionCliente.TabStop = false;
+            this.campoDireccionCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.campoDireccionCliente.TrailingIcon = null;
+            this.campoDireccionCliente.UseAccent = false;
+            this.campoDireccionCliente.UseSystemPasswordChar = false;
+            this.campoDireccionCliente.UseTallSize = false;
             // 
-            // materialTextBox27
+            // campoCuilCliente
             // 
-            this.materialTextBox27.AnimateReadOnly = false;
-            this.materialTextBox27.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.materialTextBox27.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.materialTextBox27.Cursor = System.Windows.Forms.Cursors.Default;
-            this.materialTextBox27.Depth = 0;
-            this.materialTextBox27.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.materialTextBox27.HideSelection = true;
-            this.materialTextBox27.LeadingIcon = null;
-            this.materialTextBox27.Location = new System.Drawing.Point(346, 207);
-            this.materialTextBox27.Margin = new System.Windows.Forms.Padding(0);
-            this.materialTextBox27.MaxLength = 32767;
-            this.materialTextBox27.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox27.Name = "materialTextBox27";
-            this.materialTextBox27.PasswordChar = '\0';
-            this.materialTextBox27.PrefixSuffixText = null;
-            this.materialTextBox27.ReadOnly = false;
-            this.materialTextBox27.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.materialTextBox27.SelectedText = "";
-            this.materialTextBox27.SelectionLength = 0;
-            this.materialTextBox27.SelectionStart = 0;
-            this.materialTextBox27.ShortcutsEnabled = false;
-            this.materialTextBox27.Size = new System.Drawing.Size(123, 36);
-            this.materialTextBox27.TabIndex = 47;
-            this.materialTextBox27.TabStop = false;
-            this.materialTextBox27.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.materialTextBox27.TrailingIcon = null;
-            this.materialTextBox27.UseAccent = false;
-            this.materialTextBox27.UseSystemPasswordChar = false;
-            this.materialTextBox27.UseTallSize = false;
+            this.campoCuilCliente.AnimateReadOnly = false;
+            this.campoCuilCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.campoCuilCliente.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.campoCuilCliente.Cursor = System.Windows.Forms.Cursors.Default;
+            this.campoCuilCliente.Depth = 0;
+            this.campoCuilCliente.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.campoCuilCliente.HideSelection = true;
+            this.campoCuilCliente.LeadingIcon = null;
+            this.campoCuilCliente.Location = new System.Drawing.Point(364, 219);
+            this.campoCuilCliente.Margin = new System.Windows.Forms.Padding(0);
+            this.campoCuilCliente.MaxLength = 32767;
+            this.campoCuilCliente.MouseState = MaterialSkin.MouseState.OUT;
+            this.campoCuilCliente.Name = "campoCuilCliente";
+            this.campoCuilCliente.PasswordChar = '\0';
+            this.campoCuilCliente.PrefixSuffixText = null;
+            this.campoCuilCliente.ReadOnly = false;
+            this.campoCuilCliente.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.campoCuilCliente.SelectedText = "";
+            this.campoCuilCliente.SelectionLength = 0;
+            this.campoCuilCliente.SelectionStart = 0;
+            this.campoCuilCliente.ShortcutsEnabled = false;
+            this.campoCuilCliente.Size = new System.Drawing.Size(123, 36);
+            this.campoCuilCliente.TabIndex = 48;
+            this.campoCuilCliente.TabStop = false;
+            this.campoCuilCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.campoCuilCliente.TrailingIcon = null;
+            this.campoCuilCliente.UseAccent = false;
+            this.campoCuilCliente.UseSystemPasswordChar = false;
+            this.campoCuilCliente.UseTallSize = false;
             // 
-            // materialTextBox28
+            // campoApellidoCliente
             // 
-            this.materialTextBox28.AnimateReadOnly = false;
-            this.materialTextBox28.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.materialTextBox28.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.materialTextBox28.Cursor = System.Windows.Forms.Cursors.Default;
-            this.materialTextBox28.Depth = 0;
-            this.materialTextBox28.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.materialTextBox28.HideSelection = true;
-            this.materialTextBox28.LeadingIcon = null;
-            this.materialTextBox28.Location = new System.Drawing.Point(524, 77);
-            this.materialTextBox28.Margin = new System.Windows.Forms.Padding(0);
-            this.materialTextBox28.MaxLength = 32767;
-            this.materialTextBox28.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox28.Name = "materialTextBox28";
-            this.materialTextBox28.PasswordChar = '\0';
-            this.materialTextBox28.PrefixSuffixText = null;
-            this.materialTextBox28.ReadOnly = false;
-            this.materialTextBox28.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.materialTextBox28.SelectedText = "";
-            this.materialTextBox28.SelectionLength = 0;
-            this.materialTextBox28.SelectionStart = 0;
-            this.materialTextBox28.ShortcutsEnabled = false;
-            this.materialTextBox28.Size = new System.Drawing.Size(224, 36);
-            this.materialTextBox28.TabIndex = 46;
-            this.materialTextBox28.TabStop = false;
-            this.materialTextBox28.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.materialTextBox28.TrailingIcon = null;
-            this.materialTextBox28.UseAccent = false;
-            this.materialTextBox28.UseSystemPasswordChar = false;
-            this.materialTextBox28.UseTallSize = false;
+            this.campoApellidoCliente.AnimateReadOnly = false;
+            this.campoApellidoCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.campoApellidoCliente.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.campoApellidoCliente.Cursor = System.Windows.Forms.Cursors.Default;
+            this.campoApellidoCliente.Depth = 0;
+            this.campoApellidoCliente.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.campoApellidoCliente.HideSelection = true;
+            this.campoApellidoCliente.LeadingIcon = null;
+            this.campoApellidoCliente.Location = new System.Drawing.Point(542, 89);
+            this.campoApellidoCliente.Margin = new System.Windows.Forms.Padding(0);
+            this.campoApellidoCliente.MaxLength = 32767;
+            this.campoApellidoCliente.MouseState = MaterialSkin.MouseState.OUT;
+            this.campoApellidoCliente.Name = "campoApellidoCliente";
+            this.campoApellidoCliente.PasswordChar = '\0';
+            this.campoApellidoCliente.PrefixSuffixText = null;
+            this.campoApellidoCliente.ReadOnly = false;
+            this.campoApellidoCliente.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.campoApellidoCliente.SelectedText = "";
+            this.campoApellidoCliente.SelectionLength = 0;
+            this.campoApellidoCliente.SelectionStart = 0;
+            this.campoApellidoCliente.ShortcutsEnabled = false;
+            this.campoApellidoCliente.Size = new System.Drawing.Size(224, 36);
+            this.campoApellidoCliente.TabIndex = 46;
+            this.campoApellidoCliente.TabStop = false;
+            this.campoApellidoCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.campoApellidoCliente.TrailingIcon = null;
+            this.campoApellidoCliente.UseAccent = false;
+            this.campoApellidoCliente.UseSystemPasswordChar = false;
+            this.campoApellidoCliente.UseTallSize = false;
             // 
-            // materialTextBox29
+            // campoNombreCliente
             // 
-            this.materialTextBox29.AnimateReadOnly = false;
-            this.materialTextBox29.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.materialTextBox29.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.materialTextBox29.Cursor = System.Windows.Forms.Cursors.Default;
-            this.materialTextBox29.Depth = 0;
-            this.materialTextBox29.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.materialTextBox29.HideSelection = true;
-            this.materialTextBox29.LeadingIcon = null;
-            this.materialTextBox29.Location = new System.Drawing.Point(283, 77);
-            this.materialTextBox29.Margin = new System.Windows.Forms.Padding(0);
-            this.materialTextBox29.MaxLength = 32767;
-            this.materialTextBox29.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox29.Name = "materialTextBox29";
-            this.materialTextBox29.PasswordChar = '\0';
-            this.materialTextBox29.PrefixSuffixText = null;
-            this.materialTextBox29.ReadOnly = false;
-            this.materialTextBox29.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.materialTextBox29.SelectedText = "";
-            this.materialTextBox29.SelectionLength = 0;
-            this.materialTextBox29.SelectionStart = 0;
-            this.materialTextBox29.ShortcutsEnabled = false;
-            this.materialTextBox29.Size = new System.Drawing.Size(221, 36);
-            this.materialTextBox29.TabIndex = 45;
-            this.materialTextBox29.TabStop = false;
-            this.materialTextBox29.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.materialTextBox29.TrailingIcon = null;
-            this.materialTextBox29.UseAccent = false;
-            this.materialTextBox29.UseSystemPasswordChar = false;
-            this.materialTextBox29.UseTallSize = false;
+            this.campoNombreCliente.AnimateReadOnly = false;
+            this.campoNombreCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.campoNombreCliente.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.campoNombreCliente.Cursor = System.Windows.Forms.Cursors.Default;
+            this.campoNombreCliente.Depth = 0;
+            this.campoNombreCliente.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.campoNombreCliente.HideSelection = true;
+            this.campoNombreCliente.LeadingIcon = null;
+            this.campoNombreCliente.Location = new System.Drawing.Point(301, 89);
+            this.campoNombreCliente.Margin = new System.Windows.Forms.Padding(0);
+            this.campoNombreCliente.MaxLength = 32767;
+            this.campoNombreCliente.MouseState = MaterialSkin.MouseState.OUT;
+            this.campoNombreCliente.Name = "campoNombreCliente";
+            this.campoNombreCliente.PasswordChar = '\0';
+            this.campoNombreCliente.PrefixSuffixText = null;
+            this.campoNombreCliente.ReadOnly = false;
+            this.campoNombreCliente.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.campoNombreCliente.SelectedText = "";
+            this.campoNombreCliente.SelectionLength = 0;
+            this.campoNombreCliente.SelectionStart = 0;
+            this.campoNombreCliente.ShortcutsEnabled = false;
+            this.campoNombreCliente.Size = new System.Drawing.Size(221, 36);
+            this.campoNombreCliente.TabIndex = 45;
+            this.campoNombreCliente.TabStop = false;
+            this.campoNombreCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.campoNombreCliente.TrailingIcon = null;
+            this.campoNombreCliente.UseAccent = false;
+            this.campoNombreCliente.UseSystemPasswordChar = false;
+            this.campoNombreCliente.UseTallSize = false;
             // 
             // materialButton2
             // 
             this.materialButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton2.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Dense;
+            this.materialButton2.BackColor = System.Drawing.Color.BlueViolet;
+            this.materialButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.materialButton2.CharacterCasing = MaterialSkin.Controls.MaterialButton.CharacterCasingEnum.Title;
+            this.materialButton2.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.materialButton2.Depth = 0;
+            this.materialButton2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.materialButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Document, ((byte)(0)));
+            this.materialButton2.ForeColor = System.Drawing.Color.Aquamarine;
             this.materialButton2.HighEmphasis = true;
             this.materialButton2.Icon = null;
-            this.materialButton2.Location = new System.Drawing.Point(572, 297);
+            this.materialButton2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.materialButton2.Location = new System.Drawing.Point(606, 282);
             this.materialButton2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButton2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton2.Name = "materialButton2";
             this.materialButton2.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton2.Size = new System.Drawing.Size(157, 36);
+            this.materialButton2.Size = new System.Drawing.Size(99, 36);
             this.materialButton2.TabIndex = 44;
-            this.materialButton2.Text = "guardar cambios";
+            this.materialButton2.Text = "modificar";
+            this.materialButton2.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             this.materialButton2.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.materialButton2.UseAccentColor = false;
             this.materialButton2.UseVisualStyleBackColor = true;
+            this.materialButton2.UseWaitCursor = true;
+            this.materialButton2.Click += new System.EventHandler(this.materialButton2_Click);
             // 
             // materialButton3
             // 
             this.materialButton3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton3.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Dense;
+            this.materialButton3.BackColor = System.Drawing.Color.BlueViolet;
+            this.materialButton3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.materialButton3.CharacterCasing = MaterialSkin.Controls.MaterialButton.CharacterCasingEnum.Title;
+            this.materialButton3.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.materialButton3.Depth = 0;
+            this.materialButton3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.materialButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Document, ((byte)(0)));
+            this.materialButton3.ForeColor = System.Drawing.Color.Aquamarine;
             this.materialButton3.HighEmphasis = true;
             this.materialButton3.Icon = null;
-            this.materialButton3.Location = new System.Drawing.Point(453, 297);
+            this.materialButton3.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.materialButton3.Location = new System.Drawing.Point(495, 282);
             this.materialButton3.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButton3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton3.Name = "materialButton3";
@@ -1294,18 +1442,28 @@
             this.materialButton3.Size = new System.Drawing.Size(78, 36);
             this.materialButton3.TabIndex = 43;
             this.materialButton3.Text = "borrar";
+            this.materialButton3.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             this.materialButton3.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.materialButton3.UseAccentColor = false;
             this.materialButton3.UseVisualStyleBackColor = true;
+            this.materialButton3.UseWaitCursor = true;
+            this.materialButton3.Click += new System.EventHandler(this.materialButton3_Click);
             // 
             // materialButton4
             // 
             this.materialButton4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton4.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Dense;
+            this.materialButton4.BackColor = System.Drawing.Color.BlueViolet;
+            this.materialButton4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.materialButton4.CharacterCasing = MaterialSkin.Controls.MaterialButton.CharacterCasingEnum.Title;
+            this.materialButton4.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.materialButton4.Depth = 0;
+            this.materialButton4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.materialButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Document, ((byte)(0)));
+            this.materialButton4.ForeColor = System.Drawing.Color.Aquamarine;
             this.materialButton4.HighEmphasis = true;
             this.materialButton4.Icon = null;
-            this.materialButton4.Location = new System.Drawing.Point(315, 297);
+            this.materialButton4.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.materialButton4.Location = new System.Drawing.Point(364, 282);
             this.materialButton4.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButton4.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton4.Name = "materialButton4";
@@ -1313,9 +1471,12 @@
             this.materialButton4.Size = new System.Drawing.Size(88, 36);
             this.materialButton4.TabIndex = 41;
             this.materialButton4.Text = "agregar";
+            this.materialButton4.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             this.materialButton4.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.materialButton4.UseAccentColor = false;
             this.materialButton4.UseVisualStyleBackColor = true;
+            this.materialButton4.UseWaitCursor = true;
+            this.materialButton4.Click += new System.EventHandler(this.materialButton4_Click);
             // 
             // materialLabel22
             // 
@@ -1333,20 +1494,6 @@
             this.materialLabel22.Text = "datos de clientes";
             this.materialLabel22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // materialListBox2
-            // 
-            this.materialListBox2.BackColor = System.Drawing.Color.White;
-            this.materialListBox2.BorderColor = System.Drawing.Color.LightGray;
-            this.materialListBox2.Depth = 0;
-            this.materialListBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialListBox2.Location = new System.Drawing.Point(8, 59);
-            this.materialListBox2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialListBox2.Name = "materialListBox2";
-            this.materialListBox2.SelectedIndex = -1;
-            this.materialListBox2.SelectedItem = null;
-            this.materialListBox2.Size = new System.Drawing.Size(221, 274);
-            this.materialListBox2.TabIndex = 32;
-            // 
             // materialLabel23
             // 
             this.materialLabel23.BackColor = System.Drawing.Color.Azure;
@@ -1355,7 +1502,7 @@
             this.materialLabel23.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.materialLabel23.FontType = MaterialSkin.MaterialSkinManager.fontType.Subtitle1;
             this.materialLabel23.ForeColor = System.Drawing.Color.Black;
-            this.materialLabel23.Location = new System.Drawing.Point(4, 24);
+            this.materialLabel23.Location = new System.Drawing.Point(27, 10);
             this.materialLabel23.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel23.Name = "materialLabel23";
             this.materialLabel23.Size = new System.Drawing.Size(225, 32);
@@ -1365,13 +1512,14 @@
             // 
             // fabricantes
             // 
+            this.fabricantes.Controls.Add(this.materialButton12);
+            this.fabricantes.Controls.Add(this.materialListFabricante);
             this.fabricantes.Controls.Add(this.materialLabel29);
-            this.fabricantes.Controls.Add(this.materialTextBox213);
+            this.fabricantes.Controls.Add(this.campoNombreFabricante);
             this.fabricantes.Controls.Add(this.materialButton5);
             this.fabricantes.Controls.Add(this.materialButton6);
             this.fabricantes.Controls.Add(this.materialButton7);
             this.fabricantes.Controls.Add(this.materialLabel30);
-            this.fabricantes.Controls.Add(this.materialListBox3);
             this.fabricantes.Controls.Add(this.materialLabel31);
             this.fabricantes.Location = new System.Drawing.Point(4, 4);
             this.fabricantes.Name = "fabricantes";
@@ -1380,6 +1528,62 @@
             this.fabricantes.TabIndex = 4;
             this.fabricantes.Text = "fabricantes";
             this.fabricantes.UseVisualStyleBackColor = true;
+            // 
+            // materialButton12
+            // 
+            this.materialButton12.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButton12.CharacterCasing = MaterialSkin.Controls.MaterialButton.CharacterCasingEnum.Title;
+            this.materialButton12.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Dense;
+            this.materialButton12.Depth = 0;
+            this.materialButton12.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.materialButton12.HighEmphasis = true;
+            this.materialButton12.Icon = null;
+            this.materialButton12.Location = new System.Drawing.Point(296, 9);
+            this.materialButton12.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialButton12.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton12.Name = "materialButton12";
+            this.materialButton12.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButton12.Size = new System.Drawing.Size(64, 36);
+            this.materialButton12.TabIndex = 70;
+            this.materialButton12.Text = "🔄";
+            this.materialButton12.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton12.UseAccentColor = false;
+            this.materialButton12.UseVisualStyleBackColor = true;
+            this.materialButton12.Click += new System.EventHandler(this.materialButton12_Click);
+            // 
+            // materialListFabricante
+            // 
+            this.materialListFabricante.AutoSizeTable = false;
+            this.materialListFabricante.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialListFabricante.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.materialListFabricante.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.nombreFabricante,
+            this.id_Fabricante});
+            this.materialListFabricante.Depth = 0;
+            this.materialListFabricante.FullRowSelect = true;
+            this.materialListFabricante.HideSelection = false;
+            this.materialListFabricante.Location = new System.Drawing.Point(25, 59);
+            this.materialListFabricante.MinimumSize = new System.Drawing.Size(200, 100);
+            this.materialListFabricante.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.materialListFabricante.MouseState = MaterialSkin.MouseState.OUT;
+            this.materialListFabricante.MultiSelect = false;
+            this.materialListFabricante.Name = "materialListFabricante";
+            this.materialListFabricante.OwnerDraw = true;
+            this.materialListFabricante.Size = new System.Drawing.Size(258, 262);
+            this.materialListFabricante.TabIndex = 69;
+            this.materialListFabricante.UseCompatibleStateImageBehavior = false;
+            this.materialListFabricante.View = System.Windows.Forms.View.Details;
+            this.materialListFabricante.SelectedIndexChanged += new System.EventHandler(this.materialListFabricante_SelectedIndexChanged);
+            // 
+            // nombreFabricante
+            // 
+            this.nombreFabricante.Text = "nombre";
+            this.nombreFabricante.Width = 136;
+            // 
+            // id_Fabricante
+            // 
+            this.id_Fabricante.Text = "identificador";
+            this.id_Fabricante.Width = 123;
             // 
             // materialLabel29
             // 
@@ -1393,40 +1597,40 @@
             this.materialLabel29.Name = "materialLabel29";
             this.materialLabel29.Size = new System.Drawing.Size(225, 21);
             this.materialLabel29.TabIndex = 68;
-            this.materialLabel29.Text = "ingresar Fabricante";
+            this.materialLabel29.Text = "nombre Fabricante";
             this.materialLabel29.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // materialTextBox213
+            // campoNombreFabricante
             // 
-            this.materialTextBox213.AnimateReadOnly = false;
-            this.materialTextBox213.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.materialTextBox213.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.materialTextBox213.Cursor = System.Windows.Forms.Cursors.Default;
-            this.materialTextBox213.Depth = 0;
-            this.materialTextBox213.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.materialTextBox213.HideSelection = true;
-            this.materialTextBox213.LeadingIcon = null;
-            this.materialTextBox213.Location = new System.Drawing.Point(428, 121);
-            this.materialTextBox213.Margin = new System.Windows.Forms.Padding(0);
-            this.materialTextBox213.MaxLength = 32767;
-            this.materialTextBox213.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox213.Name = "materialTextBox213";
-            this.materialTextBox213.PasswordChar = '\0';
-            this.materialTextBox213.PrefixSuffixText = null;
-            this.materialTextBox213.ReadOnly = false;
-            this.materialTextBox213.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.materialTextBox213.SelectedText = "";
-            this.materialTextBox213.SelectionLength = 0;
-            this.materialTextBox213.SelectionStart = 0;
-            this.materialTextBox213.ShortcutsEnabled = false;
-            this.materialTextBox213.Size = new System.Drawing.Size(221, 36);
-            this.materialTextBox213.TabIndex = 63;
-            this.materialTextBox213.TabStop = false;
-            this.materialTextBox213.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.materialTextBox213.TrailingIcon = null;
-            this.materialTextBox213.UseAccent = false;
-            this.materialTextBox213.UseSystemPasswordChar = false;
-            this.materialTextBox213.UseTallSize = false;
+            this.campoNombreFabricante.AnimateReadOnly = false;
+            this.campoNombreFabricante.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.campoNombreFabricante.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.campoNombreFabricante.Cursor = System.Windows.Forms.Cursors.Default;
+            this.campoNombreFabricante.Depth = 0;
+            this.campoNombreFabricante.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.campoNombreFabricante.HideSelection = true;
+            this.campoNombreFabricante.LeadingIcon = null;
+            this.campoNombreFabricante.Location = new System.Drawing.Point(428, 121);
+            this.campoNombreFabricante.Margin = new System.Windows.Forms.Padding(0);
+            this.campoNombreFabricante.MaxLength = 32767;
+            this.campoNombreFabricante.MouseState = MaterialSkin.MouseState.OUT;
+            this.campoNombreFabricante.Name = "campoNombreFabricante";
+            this.campoNombreFabricante.PasswordChar = '\0';
+            this.campoNombreFabricante.PrefixSuffixText = null;
+            this.campoNombreFabricante.ReadOnly = false;
+            this.campoNombreFabricante.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.campoNombreFabricante.SelectedText = "";
+            this.campoNombreFabricante.SelectionLength = 0;
+            this.campoNombreFabricante.SelectionStart = 0;
+            this.campoNombreFabricante.ShortcutsEnabled = false;
+            this.campoNombreFabricante.Size = new System.Drawing.Size(221, 36);
+            this.campoNombreFabricante.TabIndex = 63;
+            this.campoNombreFabricante.TabStop = false;
+            this.campoNombreFabricante.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.campoNombreFabricante.TrailingIcon = null;
+            this.campoNombreFabricante.UseAccent = false;
+            this.campoNombreFabricante.UseSystemPasswordChar = false;
+            this.campoNombreFabricante.UseTallSize = false;
             // 
             // materialButton5
             // 
@@ -1436,17 +1640,19 @@
             this.materialButton5.Depth = 0;
             this.materialButton5.HighEmphasis = true;
             this.materialButton5.Icon = null;
-            this.materialButton5.Location = new System.Drawing.Point(583, 188);
+            this.materialButton5.Location = new System.Drawing.Point(612, 204);
             this.materialButton5.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButton5.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton5.Name = "materialButton5";
             this.materialButton5.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton5.Size = new System.Drawing.Size(157, 36);
+            this.materialButton5.Size = new System.Drawing.Size(99, 36);
             this.materialButton5.TabIndex = 62;
-            this.materialButton5.Text = "guardar cambios";
+            this.materialButton5.Text = "modificar";
+            this.materialButton5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.materialButton5.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.materialButton5.UseAccentColor = false;
             this.materialButton5.UseVisualStyleBackColor = true;
+            this.materialButton5.Click += new System.EventHandler(this.materialButton5_Click);
             // 
             // materialButton6
             // 
@@ -1456,7 +1662,7 @@
             this.materialButton6.Depth = 0;
             this.materialButton6.HighEmphasis = true;
             this.materialButton6.Icon = null;
-            this.materialButton6.Location = new System.Drawing.Point(474, 188);
+            this.materialButton6.Location = new System.Drawing.Point(503, 204);
             this.materialButton6.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButton6.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton6.Name = "materialButton6";
@@ -1467,6 +1673,7 @@
             this.materialButton6.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.materialButton6.UseAccentColor = false;
             this.materialButton6.UseVisualStyleBackColor = true;
+            this.materialButton6.Click += new System.EventHandler(this.materialButton6_Click);
             // 
             // materialButton7
             // 
@@ -1476,7 +1683,7 @@
             this.materialButton7.Depth = 0;
             this.materialButton7.HighEmphasis = true;
             this.materialButton7.Icon = null;
-            this.materialButton7.Location = new System.Drawing.Point(354, 188);
+            this.materialButton7.Location = new System.Drawing.Point(383, 204);
             this.materialButton7.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButton7.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton7.Name = "materialButton7";
@@ -1487,6 +1694,7 @@
             this.materialButton7.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.materialButton7.UseAccentColor = false;
             this.materialButton7.UseVisualStyleBackColor = true;
+            this.materialButton7.Click += new System.EventHandler(this.materialButton7_Click);
             // 
             // materialLabel30
             // 
@@ -1503,20 +1711,6 @@
             this.materialLabel30.TabIndex = 59;
             this.materialLabel30.Text = "datos fabricantes";
             this.materialLabel30.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // materialListBox3
-            // 
-            this.materialListBox3.BackColor = System.Drawing.Color.White;
-            this.materialListBox3.BorderColor = System.Drawing.Color.LightGray;
-            this.materialListBox3.Depth = 0;
-            this.materialListBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialListBox3.Location = new System.Drawing.Point(25, 59);
-            this.materialListBox3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialListBox3.Name = "materialListBox3";
-            this.materialListBox3.SelectedIndex = -1;
-            this.materialListBox3.SelectedItem = null;
-            this.materialListBox3.Size = new System.Drawing.Size(221, 274);
-            this.materialListBox3.TabIndex = 58;
             // 
             // materialLabel31
             // 
@@ -1536,7 +1730,10 @@
             // 
             // presupuestos
             // 
-            this.presupuestos.Controls.Add(this.materialTextBox24);
+            this.presupuestos.Controls.Add(this.materialLabel27);
+            this.presupuestos.Controls.Add(this.campoSubTotal);
+            this.presupuestos.Controls.Add(this.materialMultiLineTextBox1);
+            this.presupuestos.Controls.Add(this.materialButton13);
             this.presupuestos.Controls.Add(this.materialLabel18);
             this.presupuestos.Controls.Add(this.comboBox2);
             this.presupuestos.Controls.Add(this.checkedListBox1);
@@ -1556,33 +1753,69 @@
             this.presupuestos.Text = "presupuestos";
             this.presupuestos.UseVisualStyleBackColor = true;
             // 
-            // materialTextBox24
+            // campoSubTotal
             // 
-            this.materialTextBox24.AnimateReadOnly = false;
-            this.materialTextBox24.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.materialTextBox24.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
-            this.materialTextBox24.Depth = 0;
-            this.materialTextBox24.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialTextBox24.HideSelection = true;
-            this.materialTextBox24.LeadingIcon = null;
-            this.materialTextBox24.Location = new System.Drawing.Point(332, 173);
-            this.materialTextBox24.MaxLength = 32767;
-            this.materialTextBox24.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox24.Name = "materialTextBox24";
-            this.materialTextBox24.PasswordChar = '\0';
-            this.materialTextBox24.PrefixSuffixText = null;
-            this.materialTextBox24.ReadOnly = false;
-            this.materialTextBox24.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.materialTextBox24.SelectedText = "";
-            this.materialTextBox24.SelectionLength = 0;
-            this.materialTextBox24.SelectionStart = 0;
-            this.materialTextBox24.ShortcutsEnabled = true;
-            this.materialTextBox24.Size = new System.Drawing.Size(388, 48);
-            this.materialTextBox24.TabIndex = 73;
-            this.materialTextBox24.TabStop = false;
-            this.materialTextBox24.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.materialTextBox24.TrailingIcon = null;
-            this.materialTextBox24.UseSystemPasswordChar = false;
+            this.campoSubTotal.AnimateReadOnly = false;
+            this.campoSubTotal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.campoSubTotal.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.campoSubTotal.Depth = 0;
+            this.campoSubTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.campoSubTotal.HideSelection = true;
+            this.campoSubTotal.LeadingIcon = null;
+            this.campoSubTotal.Location = new System.Drawing.Point(103, 289);
+            this.campoSubTotal.MaxLength = 12;
+            this.campoSubTotal.MouseState = MaterialSkin.MouseState.OUT;
+            this.campoSubTotal.Name = "campoSubTotal";
+            this.campoSubTotal.PasswordChar = '\0';
+            this.campoSubTotal.PrefixSuffixText = null;
+            this.campoSubTotal.ReadOnly = true;
+            this.campoSubTotal.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.campoSubTotal.SelectedText = "";
+            this.campoSubTotal.SelectionLength = 0;
+            this.campoSubTotal.SelectionStart = 0;
+            this.campoSubTotal.ShortcutsEnabled = true;
+            this.campoSubTotal.Size = new System.Drawing.Size(104, 48);
+            this.campoSubTotal.TabIndex = 76;
+            this.campoSubTotal.TabStop = false;
+            this.campoSubTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.campoSubTotal.TrailingIcon = null;
+            this.campoSubTotal.UseSystemPasswordChar = false;
+            // 
+            // materialMultiLineTextBox1
+            // 
+            this.materialMultiLineTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialMultiLineTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.materialMultiLineTextBox1.Depth = 0;
+            this.materialMultiLineTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialMultiLineTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialMultiLineTextBox1.Location = new System.Drawing.Point(451, 242);
+            this.materialMultiLineTextBox1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialMultiLineTextBox1.Name = "materialMultiLineTextBox1";
+            this.materialMultiLineTextBox1.Size = new System.Drawing.Size(196, 94);
+            this.materialMultiLineTextBox1.TabIndex = 75;
+            this.materialMultiLineTextBox1.Text = "-";
+            // 
+            // materialButton13
+            // 
+            this.materialButton13.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButton13.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButton13.Depth = 0;
+            this.materialButton13.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.materialButton13.HighEmphasis = true;
+            this.materialButton13.Icon = null;
+            this.materialButton13.Location = new System.Drawing.Point(703, 14);
+            this.materialButton13.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialButton13.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton13.Name = "materialButton13";
+            this.materialButton13.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButton13.Size = new System.Drawing.Size(64, 36);
+            this.materialButton13.TabIndex = 74;
+            this.materialButton13.Text = "🔄";
+            this.materialButton13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.materialButton13.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton13.UseAccentColor = true;
+            this.materialButton13.UseVisualStyleBackColor = true;
+            this.materialButton13.Click += new System.EventHandler(this.materialButton13_Click);
             // 
             // materialLabel18
             // 
@@ -1591,10 +1824,10 @@
             this.materialLabel18.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.materialLabel18.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.materialLabel18.ForeColor = System.Drawing.Color.Black;
-            this.materialLabel18.Location = new System.Drawing.Point(422, 149);
+            this.materialLabel18.Location = new System.Drawing.Point(451, 219);
             this.materialLabel18.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel18.Name = "materialLabel18";
-            this.materialLabel18.Size = new System.Drawing.Size(227, 21);
+            this.materialLabel18.Size = new System.Drawing.Size(196, 21);
             this.materialLabel18.TabIndex = 72;
             this.materialLabel18.Text = "observaciones";
             this.materialLabel18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1602,36 +1835,21 @@
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(299, 95);
+            this.comboBox2.Location = new System.Drawing.Point(7, 243);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(222, 21);
+            this.comboBox2.Size = new System.Drawing.Size(200, 21);
             this.comboBox2.TabIndex = 71;
             // 
             // checkedListBox1
             // 
             this.checkedListBox1.CheckOnClick = true;
             this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Items.AddRange(new object[] {
-            "1",
-            "1",
-            "1",
-            "1",
-            "1",
-            "1",
-            "1",
-            "1",
-            "1",
-            "1",
-            "1",
-            "1",
-            "1",
-            "1",
-            "1"});
-            this.checkedListBox1.Location = new System.Drawing.Point(541, 80);
+            this.checkedListBox1.Location = new System.Drawing.Point(234, 243);
             this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(224, 49);
+            this.checkedListBox1.Size = new System.Drawing.Size(193, 94);
             this.checkedListBox1.TabIndex = 70;
-            // 
+            checkedListBox1.ItemCheck += CheckedListBox1_ItemCheck;
+            //
             // materialLabel28
             // 
             this.materialLabel28.BackColor = System.Drawing.Color.Azure;
@@ -1639,10 +1857,10 @@
             this.materialLabel28.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.materialLabel28.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.materialLabel28.ForeColor = System.Drawing.Color.Black;
-            this.materialLabel28.Location = new System.Drawing.Point(538, 56);
+            this.materialLabel28.Location = new System.Drawing.Point(231, 219);
             this.materialLabel28.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel28.Name = "materialLabel28";
-            this.materialLabel28.Size = new System.Drawing.Size(227, 21);
+            this.materialLabel28.Size = new System.Drawing.Size(196, 21);
             this.materialLabel28.TabIndex = 69;
             this.materialLabel28.Text = "servicio-repuesto";
             this.materialLabel28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1654,46 +1872,53 @@
             this.materialLabel32.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.materialLabel32.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.materialLabel32.ForeColor = System.Drawing.Color.Black;
-            this.materialLabel32.Location = new System.Drawing.Point(296, 56);
+            this.materialLabel32.Location = new System.Drawing.Point(6, 219);
             this.materialLabel32.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel32.Name = "materialLabel32";
-            this.materialLabel32.Size = new System.Drawing.Size(225, 21);
+            this.materialLabel32.Size = new System.Drawing.Size(201, 21);
             this.materialLabel32.TabIndex = 68;
             this.materialLabel32.Text = "cliente";
             this.materialLabel32.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // materialButton8
             // 
+            this.materialButton8.AutoSize = false;
             this.materialButton8.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButton8.CharacterCasing = MaterialSkin.Controls.MaterialButton.CharacterCasingEnum.Title;
             this.materialButton8.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Dense;
             this.materialButton8.Depth = 0;
+            this.materialButton8.Enabled = false;
             this.materialButton8.HighEmphasis = true;
             this.materialButton8.Icon = null;
-            this.materialButton8.Location = new System.Drawing.Point(589, 297);
+            this.materialButton8.Location = new System.Drawing.Point(679, 149);
             this.materialButton8.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButton8.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton8.Name = "materialButton8";
             this.materialButton8.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton8.Size = new System.Drawing.Size(157, 36);
+            this.materialButton8.Size = new System.Drawing.Size(88, 36);
             this.materialButton8.TabIndex = 62;
-            this.materialButton8.Text = "guardar cambios";
+            this.materialButton8.Text = "imprimir";
+            this.materialButton8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.materialButton8.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.materialButton8.UseAccentColor = false;
             this.materialButton8.UseVisualStyleBackColor = true;
             // 
             // materialButton9
             // 
+            this.materialButton9.AutoSize = false;
             this.materialButton9.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButton9.CharacterCasing = MaterialSkin.Controls.MaterialButton.CharacterCasingEnum.Title;
             this.materialButton9.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Dense;
             this.materialButton9.Depth = 0;
+            this.materialButton9.Enabled = false;
             this.materialButton9.HighEmphasis = true;
             this.materialButton9.Icon = null;
-            this.materialButton9.Location = new System.Drawing.Point(470, 297);
+            this.materialButton9.Location = new System.Drawing.Point(583, 149);
             this.materialButton9.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButton9.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton9.Name = "materialButton9";
             this.materialButton9.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton9.Size = new System.Drawing.Size(78, 36);
+            this.materialButton9.Size = new System.Drawing.Size(88, 36);
             this.materialButton9.TabIndex = 61;
             this.materialButton9.Text = "borrar";
             this.materialButton9.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -1702,12 +1927,14 @@
             // 
             // materialButton10
             // 
+            this.materialButton10.AutoSize = false;
             this.materialButton10.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButton10.CharacterCasing = MaterialSkin.Controls.MaterialButton.CharacterCasingEnum.Title;
             this.materialButton10.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Dense;
             this.materialButton10.Depth = 0;
             this.materialButton10.HighEmphasis = true;
             this.materialButton10.Icon = null;
-            this.materialButton10.Location = new System.Drawing.Point(332, 297);
+            this.materialButton10.Location = new System.Drawing.Point(679, 243);
             this.materialButton10.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButton10.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton10.Name = "materialButton10";
@@ -1727,7 +1954,7 @@
             this.materialLabel33.Font = new System.Drawing.Font("Roboto Medium", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.materialLabel33.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
             this.materialLabel33.ForeColor = System.Drawing.Color.Black;
-            this.materialLabel33.Location = new System.Drawing.Point(424, 18);
+            this.materialLabel33.Location = new System.Drawing.Point(296, 167);
             this.materialLabel33.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel33.Name = "materialLabel33";
             this.materialLabel33.Size = new System.Drawing.Size(225, 32);
@@ -1746,7 +1973,7 @@
             this.materialListBox4.Name = "materialListBox4";
             this.materialListBox4.SelectedIndex = -1;
             this.materialListBox4.SelectedItem = null;
-            this.materialListBox4.Size = new System.Drawing.Size(221, 274);
+            this.materialListBox4.Size = new System.Drawing.Size(742, 81);
             this.materialListBox4.TabIndex = 58;
             // 
             // materialLabel34
@@ -1757,7 +1984,7 @@
             this.materialLabel34.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.materialLabel34.FontType = MaterialSkin.MaterialSkinManager.fontType.Subtitle1;
             this.materialLabel34.ForeColor = System.Drawing.Color.Black;
-            this.materialLabel34.Location = new System.Drawing.Point(21, 24);
+            this.materialLabel34.Location = new System.Drawing.Point(296, 24);
             this.materialLabel34.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel34.Name = "materialLabel34";
             this.materialLabel34.Size = new System.Drawing.Size(225, 32);
@@ -1765,27 +1992,20 @@
             this.materialLabel34.Text = "listado de presupuestos";
             this.materialLabel34.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // materialButton11
+            // materialLabel27
             // 
-            this.materialButton11.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton11.Depth = 0;
-            this.materialButton11.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.materialButton11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.materialButton11.ForeColor = System.Drawing.Color.AntiqueWhite;
-            this.materialButton11.HighEmphasis = true;
-            this.materialButton11.Icon = null;
-            this.materialButton11.Location = new System.Drawing.Point(715, 312);
-            this.materialButton11.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton11.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton11.Name = "materialButton11";
-            this.materialButton11.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton11.Size = new System.Drawing.Size(64, 36);
-            this.materialButton11.TabIndex = 35;
-            this.materialButton11.Text = "🔄";
-            this.materialButton11.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton11.UseAccentColor = false;
-            this.materialButton11.UseVisualStyleBackColor = true;
-            this.materialButton11.Click += new System.EventHandler(this.materialButton11_Click);
+            this.materialLabel27.BackColor = System.Drawing.Color.Azure;
+            this.materialLabel27.Depth = 0;
+            this.materialLabel27.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.materialLabel27.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel27.ForeColor = System.Drawing.Color.Black;
+            this.materialLabel27.Location = new System.Drawing.Point(22, 306);
+            this.materialLabel27.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel27.Name = "materialLabel27";
+            this.materialLabel27.Size = new System.Drawing.Size(75, 21);
+            this.materialLabel27.TabIndex = 77;
+            this.materialLabel27.Text = "sub total";
+            this.materialLabel27.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // repaAr
             // 
@@ -1839,7 +2059,6 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel7;
         private MaterialSkin.Controls.MaterialLabel materialLabel6;
         private MaterialSkin.Controls.MaterialButton materialButton1;
-        private MaterialSkin.Controls.MaterialButton btnAgregarRep;
         private MaterialSkin.Controls.MaterialLabel materialLabel13;
         private MaterialSkin.Controls.MaterialLabel materialLabel15;
         private MaterialSkin.Controls.MaterialLabel materialLabel17;
@@ -1847,31 +2066,24 @@
         private MaterialSkin.Controls.MaterialTextBox2 precioRepuesto;
         private MaterialSkin.Controls.MaterialTextBox2 precioVRepuesta;
         private MaterialSkin.Controls.MaterialTextBox2 nombreRepuesto;
-        private MaterialSkin.Controls.MaterialButton btnCambiosRep;
-        private MaterialSkin.Controls.MaterialButton btnBorrarRep;
         private MaterialSkin.Controls.MaterialLabel materialLabel16;
         private MaterialSkin.Controls.MaterialLabel materialLabel20;
         private MaterialSkin.Controls.MaterialLabel materialLabel21;
         private MaterialSkin.Controls.MaterialLabel materialLabel24;
         private MaterialSkin.Controls.MaterialLabel materialLabel25;
-        private MaterialSkin.Controls.MaterialTextBox2 materialTextBox25;
-        private MaterialSkin.Controls.MaterialTextBox2 materialTextBox26;
-        private MaterialSkin.Controls.MaterialTextBox2 materialTextBox27;
-        private MaterialSkin.Controls.MaterialTextBox2 materialTextBox28;
-        private MaterialSkin.Controls.MaterialTextBox2 materialTextBox29;
-        private MaterialSkin.Controls.MaterialButton materialButton2;
-        private MaterialSkin.Controls.MaterialButton materialButton3;
-        private MaterialSkin.Controls.MaterialButton materialButton4;
+        private MaterialSkin.Controls.MaterialTextBox2 campoTelefonoCliente;
+        private MaterialSkin.Controls.MaterialTextBox2 campoDireccionCliente;
+        private MaterialSkin.Controls.MaterialTextBox2 campoCuilCliente;
+        private MaterialSkin.Controls.MaterialTextBox2 campoApellidoCliente;
+        private MaterialSkin.Controls.MaterialTextBox2 campoNombreCliente;
         private MaterialSkin.Controls.MaterialLabel materialLabel22;
-        private MaterialSkin.Controls.MaterialListBox materialListBox2;
         private MaterialSkin.Controls.MaterialLabel materialLabel23;
         private MaterialSkin.Controls.MaterialLabel materialLabel29;
-        private MaterialSkin.Controls.MaterialTextBox2 materialTextBox213;
+        private MaterialSkin.Controls.MaterialTextBox2 campoNombreFabricante;
         private MaterialSkin.Controls.MaterialButton materialButton5;
         private MaterialSkin.Controls.MaterialButton materialButton6;
         private MaterialSkin.Controls.MaterialButton materialButton7;
         private MaterialSkin.Controls.MaterialLabel materialLabel30;
-        private MaterialSkin.Controls.MaterialListBox materialListBox3;
         private MaterialSkin.Controls.MaterialLabel materialLabel31;
         private MaterialSkin.Controls.MaterialLabel materialLabel28;
         private MaterialSkin.Controls.MaterialLabel materialLabel32;
@@ -1884,7 +2096,6 @@
         private System.Windows.Forms.CheckedListBox checkedListBox1;
         private MaterialSkin.Controls.MaterialLabel materialLabel18;
         private System.Windows.Forms.ComboBox comboBox2;
-        private MaterialSkin.Controls.MaterialTextBox2 materialTextBox24;
         private MaterialSkin.Controls.MaterialLabel materialLabel26;
         private MaterialSkin.Controls.MaterialTextBox2 descripcionRepuesto;
         private MaterialSkin.Controls.MaterialListView materialListRepuesto;
@@ -1898,6 +2109,29 @@
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.ComboBox comboBox1;
         private MaterialSkin.Controls.MaterialButton materialButton11;
+        private MaterialSkin.Controls.MaterialListView materialListClientes;
+        private System.Windows.Forms.ColumnHeader nombreCliente;
+        private System.Windows.Forms.ColumnHeader apellidoCliente;
+        private System.Windows.Forms.ColumnHeader cuilCliente;
+        private System.Windows.Forms.ColumnHeader telefonoCliente;
+        private System.Windows.Forms.ColumnHeader direccionCliente;
+        private MaterialSkin.Controls.MaterialButton cargarClientes;
+        private System.Windows.Forms.ColumnHeader id_cliente;
+        private MaterialSkin.Controls.MaterialButton materialButton2;
+        private MaterialSkin.Controls.MaterialButton materialButton3;
+        private MaterialSkin.Controls.MaterialButton materialButton4;
+        private MaterialSkin.Controls.MaterialButton btnCambiosRep;
+        private MaterialSkin.Controls.MaterialButton btnBorrarRep;
+        private MaterialSkin.Controls.MaterialButton btnAgregarRep;
+        private MaterialSkin.Controls.MaterialButton materialButton12;
+        private MaterialSkin.Controls.MaterialListView materialListFabricante;
+        private System.Windows.Forms.ColumnHeader nombreFabricante;
+        private System.Windows.Forms.ColumnHeader id_Fabricante;
+        private MaterialSkin.Controls.MaterialButton materialButton13;
+        private System.Drawing.Printing.PrintDocument printDocument1;
+        private MaterialSkin.Controls.MaterialMultiLineTextBox materialMultiLineTextBox1;
+        private MaterialSkin.Controls.MaterialTextBox2 campoSubTotal;
+        private MaterialSkin.Controls.MaterialLabel materialLabel27;
     }
 }
 
