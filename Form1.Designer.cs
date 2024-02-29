@@ -111,6 +111,7 @@
             this.materialLabel30 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel31 = new MaterialSkin.Controls.MaterialLabel();
             this.presupuestos = new System.Windows.Forms.TabPage();
+            this.materialLabel27 = new MaterialSkin.Controls.MaterialLabel();
             this.campoSubTotal = new MaterialSkin.Controls.MaterialTextBox2();
             this.materialMultiLineTextBox1 = new MaterialSkin.Controls.MaterialMultiLineTextBox();
             this.materialButton13 = new MaterialSkin.Controls.MaterialButton();
@@ -125,8 +126,6 @@
             this.materialLabel33 = new MaterialSkin.Controls.MaterialLabel();
             this.materialListBox4 = new MaterialSkin.Controls.MaterialListBox();
             this.materialLabel34 = new MaterialSkin.Controls.MaterialLabel();
-            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
-            this.materialLabel27 = new MaterialSkin.Controls.MaterialLabel();
             materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
@@ -1753,6 +1752,21 @@
             this.presupuestos.Text = "presupuestos";
             this.presupuestos.UseVisualStyleBackColor = true;
             // 
+            // materialLabel27
+            // 
+            this.materialLabel27.BackColor = System.Drawing.Color.Azure;
+            this.materialLabel27.Depth = 0;
+            this.materialLabel27.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.materialLabel27.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel27.ForeColor = System.Drawing.Color.Black;
+            this.materialLabel27.Location = new System.Drawing.Point(22, 306);
+            this.materialLabel27.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel27.Name = "materialLabel27";
+            this.materialLabel27.Size = new System.Drawing.Size(75, 21);
+            this.materialLabel27.TabIndex = 77;
+            this.materialLabel27.Text = "sub total";
+            this.materialLabel27.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // campoSubTotal
             // 
             this.campoSubTotal.AnimateReadOnly = false;
@@ -1842,14 +1856,16 @@
             // 
             // checkedListBox1
             // 
+
+            
             this.checkedListBox1.CheckOnClick = true;
             this.checkedListBox1.FormattingEnabled = true;
             this.checkedListBox1.Location = new System.Drawing.Point(234, 243);
             this.checkedListBox1.Name = "checkedListBox1";
             this.checkedListBox1.Size = new System.Drawing.Size(193, 94);
             this.checkedListBox1.TabIndex = 70;
-            checkedListBox1.ItemCheck += CheckedListBox1_ItemCheck;
-            //
+            this.checkedListBox1.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.CheckedListBox1_ItemCheck);
+            // 
             // materialLabel28
             // 
             this.materialLabel28.BackColor = System.Drawing.Color.Azure;
@@ -1945,6 +1961,7 @@
             this.materialButton10.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.materialButton10.UseAccentColor = false;
             this.materialButton10.UseVisualStyleBackColor = true;
+            this.materialButton10.Click += new System.EventHandler(this.materialButton10_Click);
             // 
             // materialLabel33
             // 
@@ -1991,21 +2008,6 @@
             this.materialLabel34.TabIndex = 57;
             this.materialLabel34.Text = "listado de presupuestos";
             this.materialLabel34.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // materialLabel27
-            // 
-            this.materialLabel27.BackColor = System.Drawing.Color.Azure;
-            this.materialLabel27.Depth = 0;
-            this.materialLabel27.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.materialLabel27.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel27.ForeColor = System.Drawing.Color.Black;
-            this.materialLabel27.Location = new System.Drawing.Point(22, 306);
-            this.materialLabel27.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel27.Name = "materialLabel27";
-            this.materialLabel27.Size = new System.Drawing.Size(75, 21);
-            this.materialLabel27.TabIndex = 77;
-            this.materialLabel27.Text = "sub total";
-            this.materialLabel27.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // repaAr
             // 
@@ -2128,7 +2130,6 @@
         private System.Windows.Forms.ColumnHeader nombreFabricante;
         private System.Windows.Forms.ColumnHeader id_Fabricante;
         private MaterialSkin.Controls.MaterialButton materialButton13;
-        private System.Drawing.Printing.PrintDocument printDocument1;
         private MaterialSkin.Controls.MaterialMultiLineTextBox materialMultiLineTextBox1;
         private MaterialSkin.Controls.MaterialTextBox2 campoSubTotal;
         private MaterialSkin.Controls.MaterialLabel materialLabel27;

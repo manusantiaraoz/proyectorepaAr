@@ -516,49 +516,7 @@ namespace repa.AR
         }
 
 
-        private void CheckedListBox1_ItemCheck(object sender, ItemCheckEventArgs e)
-        {
-            string item = checkedListBox1.Items[e.Index].ToString();
-
-            if (e.NewValue == CheckState.Checked)
-            {
-                // Agregar al array cuando se selecciona
-                repuestoLista.Add(item);
-                
-            }
-            else
-            {
-                // Eliminar del array cuando se deselecciona
-                repuestoLista.Remove(item);
-                
-            }
-
-
-            decimal subTotal = 0;
-            foreach (var items in repuestoLista)
-            {
-                string input = items.ToLower();
-
-
-            string priceString = input.Substring(input.IndexOf('$') + 1, input.IndexOf('-') - input.IndexOf('$') - 1);
-
-
-                if (decimal.TryParse(priceString, out decimal price))
-                {
-                    subTotal = subTotal + price;
-                 }
-                  else
-                 {
-                     Console.WriteLine("No se pudo extraer el precio correctamente.");
-                 }
-
-            }
-
-            campoSubTotal.Text = subTotal.ToString();
-
-
-        }
- 
+       
 
      
         private void materialButton13_Click(object sender, EventArgs e)
@@ -592,6 +550,76 @@ namespace repa.AR
 
         private void printPreviewControl1_Click(object sender, EventArgs e)
         {
+
+        }
+
+
+
+
+
+        private void CheckedListBox1_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+            string item = checkedListBox1.Items[e.Index].ToString();
+
+            if (e.NewValue == CheckState.Checked)
+            {
+                // Agregar al array cuando se selecciona
+                repuestoLista.Add(item);
+
+            }
+            else
+            {
+                // Eliminar del array cuando se deselecciona
+                repuestoLista.Remove(item);
+
+            }
+
+
+            decimal subTotal = 0;
+            foreach (var items in repuestoLista)
+            {
+                string input = items.ToLower();
+
+
+                string priceString = input.Substring(input.IndexOf('$') + 1, input.IndexOf('-') - input.IndexOf('$') - 1);
+
+
+                if (decimal.TryParse(priceString, out decimal price))
+                {
+                    subTotal = subTotal + price;
+                }
+                else
+                {
+                    Console.WriteLine("No se pudo extraer el precio correctamente.");
+                }
+
+            }
+
+            campoSubTotal.Text = subTotal.ToString();
+
+
+        }
+
+        private void materialButton10_Click(object sender, EventArgs e)
+        {
+            List<string> codigoProducto = new List<string>();
+
+                foreach (String item in repuestoLista)
+            {
+                String Input  = item.ToLower();
+
+                String codigo = Input.Substring(Input.IndexOf("-") +1) ;
+
+                codigoProducto.Add(codigo);
+            }
+
+            String datoCliente = comboBox2.Text;
+
+            String campoDetalle = materialMultiLineTextBox1.Text;
+
+            String campoTotal = campoSubTotal.Text;
+
+            Console.WriteLine("dato cliente {0} \n campo detalle {1} \n campo total {2}",datoCliente,campoDetalle,campoTotal) ;
 
         }
     }
