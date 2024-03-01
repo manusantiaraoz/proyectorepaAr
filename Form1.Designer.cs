@@ -124,8 +124,15 @@
             this.materialButton9 = new MaterialSkin.Controls.MaterialButton();
             this.materialButton10 = new MaterialSkin.Controls.MaterialButton();
             this.materialLabel33 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialListBox4 = new MaterialSkin.Controls.MaterialListBox();
             this.materialLabel34 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialListPresupuesto = new MaterialSkin.Controls.MaterialListView();
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
@@ -1729,6 +1736,7 @@
             // 
             // presupuestos
             // 
+            this.presupuestos.Controls.Add(this.materialListPresupuesto);
             this.presupuestos.Controls.Add(this.materialLabel27);
             this.presupuestos.Controls.Add(this.campoSubTotal);
             this.presupuestos.Controls.Add(this.materialMultiLineTextBox1);
@@ -1742,7 +1750,6 @@
             this.presupuestos.Controls.Add(this.materialButton9);
             this.presupuestos.Controls.Add(this.materialButton10);
             this.presupuestos.Controls.Add(this.materialLabel33);
-            this.presupuestos.Controls.Add(this.materialListBox4);
             this.presupuestos.Controls.Add(this.materialLabel34);
             this.presupuestos.Location = new System.Drawing.Point(4, 4);
             this.presupuestos.Name = "presupuestos";
@@ -1817,7 +1824,7 @@
             this.materialButton13.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.materialButton13.HighEmphasis = true;
             this.materialButton13.Icon = null;
-            this.materialButton13.Location = new System.Drawing.Point(703, 14);
+            this.materialButton13.Location = new System.Drawing.Point(707, 0);
             this.materialButton13.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButton13.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton13.Name = "materialButton13";
@@ -1856,8 +1863,6 @@
             // 
             // checkedListBox1
             // 
-
-            
             this.checkedListBox1.CheckOnClick = true;
             this.checkedListBox1.FormattingEnabled = true;
             this.checkedListBox1.Location = new System.Drawing.Point(234, 243);
@@ -1906,12 +1911,12 @@
             this.materialButton8.Enabled = false;
             this.materialButton8.HighEmphasis = true;
             this.materialButton8.Icon = null;
-            this.materialButton8.Location = new System.Drawing.Point(679, 149);
+            this.materialButton8.Location = new System.Drawing.Point(687, 181);
             this.materialButton8.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButton8.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton8.Name = "materialButton8";
             this.materialButton8.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton8.Size = new System.Drawing.Size(88, 36);
+            this.materialButton8.Size = new System.Drawing.Size(88, 32);
             this.materialButton8.TabIndex = 62;
             this.materialButton8.Text = "imprimir";
             this.materialButton8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1929,12 +1934,12 @@
             this.materialButton9.Enabled = false;
             this.materialButton9.HighEmphasis = true;
             this.materialButton9.Icon = null;
-            this.materialButton9.Location = new System.Drawing.Point(583, 149);
+            this.materialButton9.Location = new System.Drawing.Point(580, 181);
             this.materialButton9.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButton9.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton9.Name = "materialButton9";
             this.materialButton9.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton9.Size = new System.Drawing.Size(88, 36);
+            this.materialButton9.Size = new System.Drawing.Size(88, 32);
             this.materialButton9.TabIndex = 61;
             this.materialButton9.Text = "borrar";
             this.materialButton9.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -1950,7 +1955,7 @@
             this.materialButton10.Depth = 0;
             this.materialButton10.HighEmphasis = true;
             this.materialButton10.Icon = null;
-            this.materialButton10.Location = new System.Drawing.Point(679, 243);
+            this.materialButton10.Location = new System.Drawing.Point(683, 273);
             this.materialButton10.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButton10.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton10.Name = "materialButton10";
@@ -1971,27 +1976,13 @@
             this.materialLabel33.Font = new System.Drawing.Font("Roboto Medium", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.materialLabel33.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
             this.materialLabel33.ForeColor = System.Drawing.Color.Black;
-            this.materialLabel33.Location = new System.Drawing.Point(296, 167);
+            this.materialLabel33.Location = new System.Drawing.Point(272, 177);
             this.materialLabel33.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel33.Name = "materialLabel33";
             this.materialLabel33.Size = new System.Drawing.Size(225, 32);
             this.materialLabel33.TabIndex = 59;
             this.materialLabel33.Text = "datos de presupuestos";
             this.materialLabel33.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // materialListBox4
-            // 
-            this.materialListBox4.BackColor = System.Drawing.Color.White;
-            this.materialListBox4.BorderColor = System.Drawing.Color.LightGray;
-            this.materialListBox4.Depth = 0;
-            this.materialListBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialListBox4.Location = new System.Drawing.Point(25, 59);
-            this.materialListBox4.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialListBox4.Name = "materialListBox4";
-            this.materialListBox4.SelectedIndex = -1;
-            this.materialListBox4.SelectedItem = null;
-            this.materialListBox4.Size = new System.Drawing.Size(742, 81);
-            this.materialListBox4.TabIndex = 58;
             // 
             // materialLabel34
             // 
@@ -2001,13 +1992,77 @@
             this.materialLabel34.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.materialLabel34.FontType = MaterialSkin.MaterialSkinManager.fontType.Subtitle1;
             this.materialLabel34.ForeColor = System.Drawing.Color.Black;
-            this.materialLabel34.Location = new System.Drawing.Point(296, 24);
+            this.materialLabel34.Location = new System.Drawing.Point(294, 10);
             this.materialLabel34.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel34.Name = "materialLabel34";
             this.materialLabel34.Size = new System.Drawing.Size(225, 32);
             this.materialLabel34.TabIndex = 57;
             this.materialLabel34.Text = "listado de presupuestos";
             this.materialLabel34.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // materialListPresupuesto
+            // 
+            this.materialListPresupuesto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.materialListPresupuesto.AutoSizeTable = false;
+            this.materialListPresupuesto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialListPresupuesto.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.materialListPresupuesto.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader7,
+            this.columnHeader8,
+            this.columnHeader9,
+            this.columnHeader10,
+            this.columnHeader11,
+            this.columnHeader12,
+            this.columnHeader13});
+            this.materialListPresupuesto.Depth = 0;
+            this.materialListPresupuesto.FullRowSelect = true;
+            this.materialListPresupuesto.HideSelection = false;
+            this.materialListPresupuesto.Location = new System.Drawing.Point(6, 45);
+            this.materialListPresupuesto.MinimumSize = new System.Drawing.Size(200, 100);
+            this.materialListPresupuesto.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.materialListPresupuesto.MouseState = MaterialSkin.MouseState.OUT;
+            this.materialListPresupuesto.MultiSelect = false;
+            this.materialListPresupuesto.Name = "materialListPresupuesto";
+            this.materialListPresupuesto.Size = new System.Drawing.Size(773, 100);
+            this.materialListPresupuesto.TabIndex = 78;
+            this.materialListPresupuesto.UseCompatibleStateImageBehavior = false;
+            this.materialListPresupuesto.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "nombre y apellido";
+            this.columnHeader7.Width = 160;
+            // 
+            // columnHeader8
+            // 
+            this.columnHeader8.Text = "direccion";
+            this.columnHeader8.Width = 114;
+            // 
+            // columnHeader9
+            // 
+            this.columnHeader9.Text = "telefono";
+            this.columnHeader9.Width = 99;
+            // 
+            // columnHeader10
+            // 
+            this.columnHeader10.Text = "descripcion";
+            this.columnHeader10.Width = 152;
+            // 
+            // columnHeader11
+            // 
+            this.columnHeader11.Text = "fecha";
+            this.columnHeader11.Width = 74;
+            // 
+            // columnHeader12
+            // 
+            this.columnHeader12.Text = "total";
+            this.columnHeader12.Width = 86;
+            // 
+            // columnHeader13
+            // 
+            this.columnHeader13.Text = "id_presupuesto";
+            this.columnHeader13.Width = 126;
             // 
             // repaAr
             // 
@@ -2093,7 +2148,6 @@
         private MaterialSkin.Controls.MaterialButton materialButton9;
         private MaterialSkin.Controls.MaterialButton materialButton10;
         private MaterialSkin.Controls.MaterialLabel materialLabel33;
-        private MaterialSkin.Controls.MaterialListBox materialListBox4;
         private MaterialSkin.Controls.MaterialLabel materialLabel34;
         private System.Windows.Forms.CheckedListBox checkedListBox1;
         private MaterialSkin.Controls.MaterialLabel materialLabel18;
@@ -2133,6 +2187,14 @@
         private MaterialSkin.Controls.MaterialMultiLineTextBox materialMultiLineTextBox1;
         private MaterialSkin.Controls.MaterialTextBox2 campoSubTotal;
         private MaterialSkin.Controls.MaterialLabel materialLabel27;
+        private MaterialSkin.Controls.MaterialListView materialListPresupuesto;
+        private System.Windows.Forms.ColumnHeader columnHeader7;
+        private System.Windows.Forms.ColumnHeader columnHeader8;
+        private System.Windows.Forms.ColumnHeader columnHeader9;
+        private System.Windows.Forms.ColumnHeader columnHeader10;
+        private System.Windows.Forms.ColumnHeader columnHeader11;
+        private System.Windows.Forms.ColumnHeader columnHeader12;
+        private System.Windows.Forms.ColumnHeader columnHeader13;
     }
 }
 

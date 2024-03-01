@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
+using System.Data.SqlTypes;
 using System.Drawing;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -516,9 +518,9 @@ namespace repa.AR
         }
 
 
-       
 
-     
+
+
         private void materialButton13_Click(object sender, EventArgs e)
         {
             comboBox2.Items.Clear();
@@ -539,8 +541,32 @@ namespace repa.AR
 
             while (repuestos.Read())
             {
-                checkedListBox1.Items.Add("nombre: "+repuestos["nombre"].ToString() + "; " +"fabricante:"+ repuestos["nombre_fabricante"].ToString() +" precio: $" + repuestos["precio_venta"].ToString() + " - " + repuestos["id_repuesto"].ToString());
+                checkedListBox1.Items.Add("nombre: " + repuestos["nombre"].ToString() + "; " + "fabricante:" + repuestos["nombre_fabricante"].ToString() + " precio: $" + repuestos["precio_venta"].ToString() + " - " + repuestos["id_repuesto"].ToString());
             }
+
+            conect.Close();
+
+
+            //mostrar informacion del presupuestos creados 
+            abrirConexion();
+            String datosPresupuesto = "select cl.nombre, cl.apellido, cl.cuil,cl.telefono, cl.direccion, p.fecha, p.descripcion, p.total, p.id_presupuesto FROM presupuestotb AS p INNER JOIN cliente AS cl on p.id_cliente = cl.id_cliente ;";
+            SqlCommand cmd = new SqlCommand(datosPresupuesto, conect);
+            SqlDataReader respCmd = cmd.ExecuteReader();
+
+            while (respCmd.Read())
+            {
+                ListViewItem rep = new ListViewItem(respCmd["nombre"].ToString()+" "+ respCmd["apellido"].ToString());
+                
+                rep.SubItems.Add(respCmd["direccion"].ToString());
+                rep.SubItems.Add(respCmd["telefono"].ToString());
+                rep.SubItems.Add(respCmd["descripcion"].ToString());
+                rep.SubItems.Add(respCmd["fecha"].ToString());
+                rep.SubItems.Add(respCmd["total"].ToString());
+                rep.SubItems.Add(respCmd["id_presupuesto"].ToString());
+
+                materialListPresupuesto.Items.Add(rep);
+            }
+        
         }
 
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
@@ -594,8 +620,8 @@ namespace repa.AR
                 }
 
             }
-
-            campoSubTotal.Text = subTotal.ToString();
+            String cambioPunto = subTotal.ToString().Replace(",",".");
+            campoSubTotal.Text = cambioPunto;
 
 
         }
@@ -613,14 +639,64 @@ namespace repa.AR
                 codigoProducto.Add(codigo);
             }
 
-            String datoCliente = comboBox2.Text;
 
+            //datos ceteados para la consulta
+                //codigo Cliente
+            String datoClienteCrudo = comboBox2.Text;
+            String codigoCliente = datoClienteCrudo.Substring(datoClienteCrudo.IndexOf("-") + 1);
+
+                
+            //campo de informacion adicional (descripcion)
             String campoDetalle = materialMultiLineTextBox1.Text;
-
+                
+            //campo total a ingresar
             String campoTotal = campoSubTotal.Text;
 
-            Console.WriteLine("dato cliente {0} \n campo detalle {1} \n campo total {2}",datoCliente,campoDetalle,campoTotal) ;
+            //fecha de creacion del presupuesto
+            DateTime fechaActual = DateTime.Now.Date;
+            String formatoFecha = "yyyy-MM-dd";
+            string fechaFormateada = fechaActual.ToString(formatoFecha);
 
+            // para cargar los datos, vamos a hacer una transaccion, con la finalidad de que se realice las 2 consultas o ninguna, haremos el insert en tabla presupuesto y otra en poducto presupuesto
+
+
+            try
+            {
+                abrirConexion();
+
+                SqlTransaction transaction = conect.BeginTransaction();
+
+                try
+                {
+                    //insertar presupuesto
+                    string query = "INSERT INTO presupuestotb (id_admin, id_cliente, fecha, descripcion, total ) VALUES (1, " + codigoCliente + ", '" + fechaFormateada + "', '" + campoDetalle + "', " + campoTotal + " ); SELECT SCOPE_IDENTITY(); ";
+
+                    SqlCommand comando = new SqlCommand(query, conect, transaction);
+                    int idPresupuesto = Convert.ToInt32(comando.ExecuteScalar());
+
+                    foreach (var codigo in codigoProducto)
+                    {
+                        string insertProducto = "INSERT INTO prodPresupuesto (id_presupuesto, id_productos) VALUES (" + idPresupuesto + "," + codigo + ")";
+
+                        SqlCommand cmdRepuesto = new SqlCommand(insertProducto, conect, transaction);
+                        cmdRepuesto.ExecuteNonQuery();
+                    }
+
+                    transaction.Commit();
+                    MessageBox.Show("presupúesto creado con exito");
+                }
+                catch (Exception ex)
+                {
+                    transaction.Rollback();
+                    throw ex;
+                }
+                
+
+            }
+            catch (Exception ex) {
+
+                Console.WriteLine("Error al guardar los datos: " + ex.Message);
+            }
         }
     }
 }
