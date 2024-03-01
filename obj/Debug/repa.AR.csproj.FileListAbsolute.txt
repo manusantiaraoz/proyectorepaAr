@@ -10,3 +10,6 @@ C:\Users\ROG BY NG\source\repos\repa.AR\obj\Debug\repa.AR.csproj.CopyComplete
 C:\Users\ROG BY NG\source\repos\repa.AR\obj\Debug\repa.AR.exe
 C:\Users\ROG BY NG\source\repos\repa.AR\obj\Debug\repa.AR.pdb
 C:\Users\ROG BY NG\source\repos\repa.AR\obj\Debug\repa.AR.repaAr.resources
+C:\Users\ROG BY NG\source\repos\repa.AR\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\ROG BY NG\source\repos\repa.AR\bin\Debug\itextsharp.dll
+C:\Users\ROG BY NG\source\repos\repa.AR\bin\Debug\itextsharp.xml

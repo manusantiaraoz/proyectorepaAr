@@ -12,6 +12,10 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.Design;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using System.IO;
+using System.Diagnostics;
 
 namespace repa.AR
 {
@@ -25,7 +29,7 @@ namespace repa.AR
 
 
         private List<string> repuestoLista = new List<string>();
-
+        int codigoPresupuesto = 0;
         //codigo auxiliar de conexiones y consultas
         private void abrirConexion()
         {
@@ -556,8 +560,6 @@ namespace repa.AR
             while (respCmd.Read())
             {
                 ListViewItem rep = new ListViewItem(respCmd["nombre"].ToString()+" "+ respCmd["apellido"].ToString());
-                
-                rep.SubItems.Add(respCmd["direccion"].ToString());
                 rep.SubItems.Add(respCmd["telefono"].ToString());
                 rep.SubItems.Add(respCmd["descripcion"].ToString());
                 rep.SubItems.Add(respCmd["fecha"].ToString());
@@ -697,6 +699,61 @@ namespace repa.AR
 
                 Console.WriteLine("Error al guardar los datos: " + ex.Message);
             }
+        }
+
+        private void materialListPresupuesto_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (materialListPresupuesto.SelectedItems.Count > 0)
+            {
+                btnDetalleP.Enabled = true;
+                ListViewItem selectedItem = materialListPresupuesto.SelectedItems[0];
+
+                codigoPresupuesto = int.Parse(selectedItem.SubItems[5].Text);
+
+            }
+           
+        }
+
+        private void materialButton8_Click(object sender, EventArgs e)
+        {
+            String nombreAdmin = "";
+            String apellidoAdmin = "";
+            String cuilAdmin = "";
+            String direccionAdmin = "";
+            String telefonoAdmin = "";
+            String empresaAdmin = "";
+
+            SqlDataReader adminDatos=  mostrarDatos("admin");
+
+            while(adminDatos.Read())
+            {
+                nombreAdmin = adminDatos["nombre"].ToString();
+                apellidoAdmin = adminDatos["apellido"].ToString();
+                cuilAdmin = adminDatos["cuil"].ToString();
+                direccionAdmin = adminDatos["direccion"].ToString();
+                telefonoAdmin = adminDatos["telefono"].ToString();
+                empresaAdmin = adminDatos["empresa"].ToString().ToUpper();
+                
+            }
+
+            String datosAdministrados = nombreAdmin+" "+apellidoAdmin+"\n cuil:"+cuilAdmin+"\n"+direccionAdmin+"\n telefono:"+telefonoAdmin;
+
+          Document presupuesto = new Document();
+            PdfWriter.GetInstance(presupuesto, new FileStream("presupuesto.pdf", FileMode.Create));
+
+            presupuesto.Open();
+            Paragraph empresa = new Paragraph(empresaAdmin);
+            empresa.Font.Size = 12;
+            empresa.Alignment = Element.ALIGN_LEFT; 
+            Paragraph centrar = new Paragraph(datosAdministrados);
+            centrar.Alignment = Element.ALIGN_RIGHT;
+            centrar.Font.Size = 9;
+
+            presupuesto.Add(empresa);
+            presupuesto.Add(centrar);
+
+            presupuesto.Close();
+            Process.Start("presupuesto.pdf");
         }
     }
 }
