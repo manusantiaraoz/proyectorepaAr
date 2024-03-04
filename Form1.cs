@@ -16,6 +16,9 @@ using iTextSharp.text;
 using iTextSharp.text.pdf;
 using System.IO;
 using System.Diagnostics;
+using System.Text.RegularExpressions;
+using Org.BouncyCastle.Asn1.Ocsp;
+using System.Reflection;
 
 namespace repa.AR
 {
@@ -30,6 +33,7 @@ namespace repa.AR
 
         private List<string> repuestoLista = new List<string>();
         int codigoPresupuesto = 0;
+        int codigoCliente = 0;
         //codigo auxiliar de conexiones y consultas
         private void abrirConexion()
         {
@@ -528,6 +532,7 @@ namespace repa.AR
         private void materialButton13_Click(object sender, EventArgs e)
         {
             comboBox2.Items.Clear();
+            materialListPresupuesto.Items.Clear();
             SqlDataReader clientes = mostrarDatos("cliente");
 
             while (clientes.Read())
@@ -553,20 +558,23 @@ namespace repa.AR
 
             //mostrar informacion del presupuestos creados 
             abrirConexion();
-            String datosPresupuesto = "select cl.nombre, cl.apellido, cl.cuil,cl.telefono, cl.direccion, p.fecha, p.descripcion, p.total, p.id_presupuesto FROM presupuestotb AS p INNER JOIN cliente AS cl on p.id_cliente = cl.id_cliente ;";
+            String datosPresupuesto = "select cl.id_cliente, cl.nombre, cl.apellido, cl.cuil,cl.telefono, cl.direccion, p.fecha, p.descripcion, p.total, p.id_presupuesto FROM presupuestotb AS p INNER JOIN cliente AS cl on p.id_cliente = cl.id_cliente ;";
             SqlCommand cmd = new SqlCommand(datosPresupuesto, conect);
             SqlDataReader respCmd = cmd.ExecuteReader();
 
             while (respCmd.Read())
             {
-                ListViewItem rep = new ListViewItem(respCmd["nombre"].ToString()+" "+ respCmd["apellido"].ToString());
+                ListViewItem rep = new ListViewItem(respCmd["nombre"].ToString() + " " + respCmd["apellido"].ToString());
                 rep.SubItems.Add(respCmd["telefono"].ToString());
                 rep.SubItems.Add(respCmd["descripcion"].ToString());
                 rep.SubItems.Add(respCmd["fecha"].ToString());
                 rep.SubItems.Add(respCmd["total"].ToString());
                 rep.SubItems.Add(respCmd["id_presupuesto"].ToString());
+                rep.SubItems.Add(respCmd["id_cliente"].ToString());
 
                 materialListPresupuesto.Items.Add(rep);
+
+                
             }
         
         }
@@ -630,6 +638,8 @@ namespace repa.AR
 
         private void materialButton10_Click(object sender, EventArgs e)
         {
+
+
             List<string> codigoProducto = new List<string>();
 
                 foreach (String item in repuestoLista)
@@ -699,6 +709,11 @@ namespace repa.AR
 
                 Console.WriteLine("Error al guardar los datos: " + ex.Message);
             }
+
+            materialMultiLineTextBox1.Clear();
+            checkedListBox1.Items.Clear();
+            comboBox2.Items.Clear();
+            campoSubTotal.Clear();
         }
 
         private void materialListPresupuesto_SelectedIndexChanged(object sender, EventArgs e)
@@ -706,9 +721,14 @@ namespace repa.AR
             if (materialListPresupuesto.SelectedItems.Count > 0)
             {
                 btnDetalleP.Enabled = true;
+                materialButton9.Enabled= true;
                 ListViewItem selectedItem = materialListPresupuesto.SelectedItems[0];
 
                 codigoPresupuesto = int.Parse(selectedItem.SubItems[5].Text);
+                
+                codigoCliente = int.Parse(selectedItem.SubItems[6].Text);
+
+                Console.WriteLine(codigoPresupuesto +"\n"+ codigoCliente);
 
             }
            
@@ -723,9 +743,11 @@ namespace repa.AR
             String telefonoAdmin = "";
             String empresaAdmin = "";
 
-            SqlDataReader adminDatos=  mostrarDatos("admin");
 
-            while(adminDatos.Read())
+
+            SqlDataReader adminDatos = mostrarDatos("admin");
+
+            while (adminDatos.Read())
             {
                 nombreAdmin = adminDatos["nombre"].ToString();
                 apellidoAdmin = adminDatos["apellido"].ToString();
@@ -733,27 +755,245 @@ namespace repa.AR
                 direccionAdmin = adminDatos["direccion"].ToString();
                 telefonoAdmin = adminDatos["telefono"].ToString();
                 empresaAdmin = adminDatos["empresa"].ToString().ToUpper();
-                
+
+            }
+            conect.Close();
+
+            //datos del cliente 
+
+            String nombreCliente = "";
+            String apellidoCliente = "";
+            String cuilCliente = "";
+            String direccionCliente = "";
+            String telefonoCliente = "";
+
+            abrirConexion();
+            String datosCl = "SELECT nombre, apellido, cuil, direccion, telefono FROM cliente WHERE id_cliente = " + codigoCliente;
+
+            SqlCommand dato = new SqlCommand(datosCl, conect);
+            SqlDataReader detalles = dato.ExecuteReader();
+
+            while (detalles.Read()) {
+                nombreCliente = detalles["nombre"].ToString();
+                apellidoCliente = detalles["apellido"].ToString();
+                cuilCliente = detalles["cuil"].ToString();
+                direccionCliente = detalles["direccion"].ToString();
+                telefonoCliente = detalles["telefono"].ToString();
+            }
+            conect.Close();
+
+            //datos productos presupuesto
+            List<String> prodyprecio = new List<String>();
+
+            abrirConexion();
+            String consultaProducto = "SELECT r.nombre, r.precio_venta FROM prodPresupuesto AS rP INNER JOIN repuesto AS r ON rP.id_productos = r.id_repuesto WHERE rP.id_presupuesto = " + codigoPresupuesto;
+            SqlCommand datoProd = new SqlCommand(consultaProducto, conect);
+            SqlDataReader cmdprod = datoProd.ExecuteReader();
+            while (cmdprod.Read())
+            {
+                String prodpre = cmdprod["nombre"].ToString() + " $" + cmdprod["precio_venta"].ToString();
+
+                prodyprecio.Add(prodpre);
             }
 
-            String datosAdministrados = nombreAdmin+" "+apellidoAdmin+"\n cuil:"+cuilAdmin+"\n"+direccionAdmin+"\n telefono:"+telefonoAdmin;
+
+            conect.Close();
+
+            //datos presupuesto
+
+
+            abrirConexion();
+            String consultaPresupuesto = "SELECT * FROM presupuestotb WHERE id_presupuesto = " + codigoPresupuesto;
+            SqlCommand datoPresupuesto = new SqlCommand(consultaPresupuesto, conect);
+            SqlDataReader cmdpre = datoPresupuesto.ExecuteReader();
+
+            String fecha = "";
+            String descripcion = "";
+            String totalpresupuesto = "";
+
+            while (cmdpre.Read())
+            {
+                fecha = cmdpre["fecha"].ToString();
+                descripcion = cmdpre["descripcion"].ToString();
+                totalpresupuesto = cmdpre["total"].ToString();
+            }
+
+
+            conect.Close();
+
+
+            //creando el pdf
+            String datosCliente ="datos cliente \n"+"nombre: "+ nombreCliente +" "+ apellidoCliente + "\ncuil: " + cuilCliente+ "\ndireccion: " + direccionCliente + "\ntel: " + telefonoCliente;
+            String datosAdministrados = "datos servidor \n" + nombreAdmin +" "+apellidoAdmin+ "\ncuil:" + cuilAdmin+ "\n" + direccionAdmin+ "\ntelefono:" + telefonoAdmin;
 
           Document presupuesto = new Document();
             PdfWriter.GetInstance(presupuesto, new FileStream("presupuesto.pdf", FileMode.Create));
 
-            presupuesto.Open();
-            Paragraph empresa = new Paragraph(empresaAdmin);
-            empresa.Font.Size = 12;
-            empresa.Alignment = Element.ALIGN_LEFT; 
-            Paragraph centrar = new Paragraph(datosAdministrados);
-            centrar.Alignment = Element.ALIGN_RIGHT;
-            centrar.Font.Size = 9;
+            PdfPTable contenedor = new PdfPTable(1);
+            contenedor.WidthPercentage = 100;
 
-            presupuesto.Add(empresa);
-            presupuesto.Add(centrar);
+            PdfPTable cabecera = new PdfPTable(1);
+            cabecera.WidthPercentage = 100;
+            cabecera.DefaultCell.BorderWidth = 0;
+
+            PdfPTable datosClte = new PdfPTable(2);
+            datosClte.WidthPercentage = 100;
+            datosClte.DefaultCell.BorderWidth = 0;
+
+            PdfPTable datosProd = new PdfPTable(1);
+            datosProd.WidthPercentage = 100;
+            datosProd.DefaultCell.BorderWidth = 0;
+
+            PdfPTable detallePre = new PdfPTable(1);
+            detallePre.WidthPercentage = 100;
+            detallePre.DefaultCell.BorderWidth = 0;
+
+            PdfPTable footer = new PdfPTable(1);
+            footer.WidthPercentage = 100;
+            footer.DefaultCell.BorderWidth = 0;
+            footer.TotalWidth = presupuesto.PageSize.Width - presupuesto.LeftMargin - presupuesto.RightMargin;
+
+
+
+            PdfPCell descripcionCab = new PdfPCell(new Phrase("detalle del servicio"));
+            descripcionCab.Padding = 10;
+            descripcionCab.Phrase.Font.SetFamily("calabri");
+            descripcionCab.HorizontalAlignment = Element.ALIGN_CENTER; // Centrar horizontalmente
+            
+            detallePre.AddCell(descripcionCab);
+
+            PdfPCell detalleTrabajo = new PdfPCell(new Phrase(descripcion));
+            detalleTrabajo.HorizontalAlignment = Element.ALIGN_LEFT; // Centrar horizontalmente
+            detalleTrabajo.Padding = 15;
+            detalleTrabajo.Phrase.Font.SetFamily("calabri");
+            detalleTrabajo.Phrase.Font.Size = 11;
+            detalleTrabajo.BorderWidth = 0;
+            detallePre.AddCell(detalleTrabajo);
+
+
+            PdfPCell total = new PdfPCell(new Phrase("total a pagar: $"+ totalpresupuesto));
+            total.HorizontalAlignment = Element.ALIGN_RIGHT; // Centrar horizontalmente
+            total.Padding = 20;
+            total.Phrase.Font.SetFamily("calabri");
+            total.Phrase.Font.Size = 11;
+            total.BorderWidth = 0;
+            footer.AddCell(total);
+
+            PdfPCell valiP = new PdfPCell(new Phrase("este presupuesto es valido por 15 dias desde su emisión. fecha de emisión: "+ fecha));
+            valiP.HorizontalAlignment = Element.ALIGN_CENTER; // Centrar horizontalmente
+            valiP.Padding = 10;
+            valiP.Phrase.Font.SetFamily("calabri");
+            valiP.Phrase.Font.Size = 9;
+            footer.AddCell(valiP);
+
+            presupuesto.Open();
+
+            //nombre de la empresa
+            PdfPCell empresa = new PdfPCell(new Phrase(empresaAdmin));
+            empresa.Padding = 10;
+            empresa.HorizontalAlignment = Element.ALIGN_CENTER; // Centrar horizontalmente
+            empresa.BorderWidth = 0;
+
+            //datos del administrador
+            PdfPCell centrar = new PdfPCell(new Phrase(datosAdministrados));
+            centrar.HorizontalAlignment = Element.ALIGN_RIGHT; // Centrar horizontalmente
+            centrar.Padding = 10;
+            centrar.Phrase.Font.SetFamily("calabri");
+            centrar.Phrase.Font.Size = 11;
+            
+            cabecera.AddCell(empresa);
+            
+            //datos cliente
+            PdfPCell datoC = new PdfPCell(new Phrase(datosCliente));
+            datoC.Phrase.Font.SetFamily("calabri");
+            datoC.Phrase.Font.Size = 10;
+            datoC.Padding = 10;
+            datoC.HorizontalAlignment = Element.ALIGN_LEFT; // Centrar horizontalmente
+          
+            datosClte.AddCell(datoC);
+            datosClte.AddCell(centrar);
+
+            PdfPTable datosProductos = new PdfPTable(1);
+            datosProductos.DefaultCell.BorderWidth = 0;
+
+
+            //datos productos
+            PdfPCell detalle = new PdfPCell(new Phrase("repuestos necesarios"));
+            detalle.Padding = 15;
+            detalle.Phrase.Font.SetFamily("calabri");
+            detalle.HorizontalAlignment = Element.ALIGN_CENTER; // Centrar horizontalmente
+            
+            datosProd.AddCell(detalle);
+
+            foreach ( String item in prodyprecio)
+            {
+                PdfPCell itemdetalle = new PdfPCell(new Phrase(item));
+                itemdetalle.Padding = 10;
+                itemdetalle.Phrase.Font.SetFamily("calabri");
+                
+                itemdetalle.BorderWidth= 0; 
+
+                datosProd.AddCell(itemdetalle);
+            }
+
+            //detalles del presupuesto
+
+            contenedor.AddCell(cabecera);
+            contenedor.AddCell(datosClte);
+            contenedor.AddCell(datosProd);
+            contenedor.AddCell(detallePre);
+            contenedor.AddCell(footer);
+
+            presupuesto.Add(contenedor);
+            
+
 
             presupuesto.Close();
             Process.Start("presupuesto.pdf");
+        }
+
+        private void materialButton9_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                abrirConexion();
+
+                SqlTransaction transaction = conect.BeginTransaction();
+
+                try
+                {
+                    // Eliminar registros de prodPresupuesto
+                    string query1 = "DELETE FROM prodPresupuesto WHERE id_presupuesto IN (SELECT id_presupuesto FROM Presupuestotb WHERE id_presupuesto = @ConditionID)";
+
+                    SqlCommand comando1 = new SqlCommand(query1, conect, transaction);
+                    comando1.Parameters.AddWithValue("@ConditionID", codigoPresupuesto);
+                    comando1.ExecuteNonQuery();
+
+                    // Eliminar registros de Presupuestotb
+                    string query2 = "DELETE FROM Presupuestotb WHERE id_presupuesto = @ConditionID";
+
+                    SqlCommand cmd2 = new SqlCommand(query2, conect, transaction);
+                    cmd2.Parameters.AddWithValue("@ConditionID", codigoPresupuesto);
+                    cmd2.ExecuteNonQuery();
+
+                    transaction.Commit();
+                    MessageBox.Show("Registros eliminados correctamente.");
+                }
+                catch (Exception ex)
+                {
+                    transaction.Rollback();
+                    Console.WriteLine("Error al eliminar registros: " + ex.Message);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error de conexión: " + ex.Message);
+            }
+            finally
+            {
+                conect.Close();
+            }
+
         }
     }
 }

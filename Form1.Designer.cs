@@ -118,6 +118,7 @@
             this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.materialLabel27 = new MaterialSkin.Controls.MaterialLabel();
             this.campoSubTotal = new MaterialSkin.Controls.MaterialTextBox2();
             this.materialMultiLineTextBox1 = new MaterialSkin.Controls.MaterialMultiLineTextBox();
@@ -1773,11 +1774,12 @@
             this.columnHeader10,
             this.columnHeader11,
             this.columnHeader12,
-            this.columnHeader13});
+            this.columnHeader13,
+            this.columnHeader8});
             this.materialListPresupuesto.Depth = 0;
             this.materialListPresupuesto.FullRowSelect = true;
             this.materialListPresupuesto.HideSelection = false;
-            this.materialListPresupuesto.Location = new System.Drawing.Point(6, 45);
+            this.materialListPresupuesto.Location = new System.Drawing.Point(3, 45);
             this.materialListPresupuesto.MinimumSize = new System.Drawing.Size(200, 100);
             this.materialListPresupuesto.MouseLocation = new System.Drawing.Point(-1, -1);
             this.materialListPresupuesto.MouseState = MaterialSkin.MouseState.OUT;
@@ -1819,6 +1821,10 @@
             // 
             this.columnHeader13.Text = "id";
             this.columnHeader13.Width = 130;
+            // 
+            // columnHeader8
+            // 
+            this.columnHeader8.Text = "id_cl";
             // 
             // materialLabel27
             // 
@@ -1875,7 +1881,7 @@
             this.materialMultiLineTextBox1.Name = "materialMultiLineTextBox1";
             this.materialMultiLineTextBox1.Size = new System.Drawing.Size(196, 94);
             this.materialMultiLineTextBox1.TabIndex = 75;
-            this.materialMultiLineTextBox1.Text = "-";
+            this.materialMultiLineTextBox1.Text = "";
             // 
             // materialButton13
             // 
@@ -2007,6 +2013,7 @@
             this.materialButton9.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.materialButton9.UseAccentColor = false;
             this.materialButton9.UseVisualStyleBackColor = true;
+            this.materialButton9.Click += new System.EventHandler(this.materialButton9_Click);
             // 
             // materialButton10
             // 
@@ -2192,6 +2199,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader11;
         private System.Windows.Forms.ColumnHeader columnHeader12;
         private System.Windows.Forms.ColumnHeader columnHeader13;
+        private System.Windows.Forms.ColumnHeader columnHeader8;
     }
 }
 
