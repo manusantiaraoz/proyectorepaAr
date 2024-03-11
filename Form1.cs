@@ -270,19 +270,29 @@ namespace repa.AR
 
                 }
             }
-           
+
+            if(String.IsNullOrEmpty(nombreRepuesto.Text) && String.IsNullOrEmpty(precioRepuesto.Text) && String.IsNullOrEmpty(precioVRepuesta.Text) && String.IsNullOrEmpty(descripcionRepuesto.Text) )
+            {
+                MessageBox.Show("algun campo esta vacio");
+
+            }
+            else
+            {
+
+                abrirConexion();
+
+                String query = "INSERT INTO repuesto (nombre, fabricante, precio_compra, precio_venta, detalle) VALUES ('" + nombreRep + "' ," + codigoFabricante + ", " + precioRep + ", " + precioRepVenta + ", '" + descriRep + "')";
+
+                SqlCommand comando = new SqlCommand(query, conect);
+                comando.ExecuteReader();
+                MessageBox.Show("se cargo el nuevo repuesto");
+                limpiarCamposRepuesto();
+                materialListRepuesto.Items.Clear();
+                mostrarRepuestos();
+            }
            
 
-            abrirConexion();
-
-            String query = "INSERT INTO repuesto (nombre, fabricante, precio_compra, precio_venta, detalle) VALUES ('"+nombreRep+"' ,"+ codigoFabricante + ", "+precioRep + ", " + precioRepVenta + ", '"+ descriRep+"')";
-            
-            SqlCommand comando = new SqlCommand(query,conect);
-             comando.ExecuteReader();
-            MessageBox.Show("se cargo el nuevo repuesto");
-            limpiarCamposRepuesto();
-            materialListRepuesto.Items.Clear();
-            mostrarRepuestos();
+         
         }
 
         private void btnCambiosRep_Click(object sender, EventArgs e)
@@ -426,17 +436,25 @@ namespace repa.AR
             String cuilCliente = campoCuilCliente.Text;
             String telefonoCliente = campoTelefonoCliente.Text;
             String direCliente = campoDireccionCliente.Text;
+            
+            if (String.IsNullOrEmpty(campoNombreCliente.Text) && String.IsNullOrEmpty(campoApellidoCliente.Text) && String.IsNullOrEmpty(campoDireccionCliente.Text))
+            {
+                MessageBox.Show("por favor revisar si todos los campos estan completos");
+            }
+            else
+            {
+                abrirConexion();
 
-            abrirConexion();
+                String query = "insert into cliente (nombre, apellido, cuil, telefono, direccion) VALUES ('" + nombreCliente + "', '" + apellidoCliente + "', " + cuilCliente + ", " + telefonoCliente + ",'" + direCliente + "');";
 
-            String query = "insert into cliente (nombre, apellido, cuil, telefono, direccion) VALUES ('" + nombreCliente + "', '" + apellidoCliente + "', " +cuilCliente +", "+telefonoCliente +",'"+ direCliente+ "');";
-           
-            SqlCommand comando = new SqlCommand(query, conect);
-           comando.ExecuteReader();
-            MessageBox.Show("se agrego cliente con exito");
-            limpiarCamposCliente();
-            materialListClientes.Items.Clear();
-            mostrarDatosCliente();
+                SqlCommand comando = new SqlCommand(query, conect);
+                comando.ExecuteReader();
+                MessageBox.Show("se agrego cliente con exito");
+                limpiarCamposCliente();
+                materialListClientes.Items.Clear();
+                mostrarDatosCliente();
+            }
+          
 
 
         }
@@ -488,16 +506,25 @@ namespace repa.AR
 
             String campoNombre = campoNombreFabricante.Text;
 
-            abrirConexion();
+            if (String.IsNullOrEmpty(campoNombreFabricante.Text))
+            {
+                MessageBox.Show("no olvides completar el campo");
+            }
+            else
+            {
+                abrirConexion();
 
-            String query = "insert into fabricante (nombre_fabricante) VALUES ('" + campoNombre + "');";
+                String query = "insert into fabricante (nombre_fabricante) VALUES ('" + campoNombre + "');";
 
-            SqlCommand comando = new SqlCommand(query, conect);
-            comando.ExecuteReader();
-            MessageBox.Show("se agrego cliente con exito");
-            limpiarCampoFabricante();
-            materialListFabricante.Items.Clear();
-            mostrarDatosFabricante();
+                SqlCommand comando = new SqlCommand(query, conect);
+                comando.ExecuteReader();
+                MessageBox.Show("se agrego cliente con exito");
+                limpiarCampoFabricante();
+                materialListFabricante.Items.Clear();
+                mostrarDatosFabricante();
+            }
+
+           
 
         }
 
